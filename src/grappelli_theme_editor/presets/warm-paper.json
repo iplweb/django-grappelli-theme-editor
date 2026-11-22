@@ -1,0 +1,41 @@
+{
+  "name": "Warm paper",
+  "description": "Serif type on warm paper tones — a library reading room.",
+  "seeds": {
+    "light": {
+      "accent": "#a0522d",
+      "chrome": "#3b2f2a",
+      "background": "#f7f3ea",
+      "text": "#3b3024"
+    },
+    "dark": {
+      "background": "#1f1a16",
+      "text": "#e6dccb",
+      "chrome": "#2b221d"
+    }
+  },
+  "components": {
+    "modules": {
+      "header_surface": "flat",
+      "header_text_shadow": "none"
+    },
+    "buttons": {
+      "radius": 3,
+      "surface": "flat"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "light": "#8a4524"
+      }
+    },
+    "navbar": {
+      "link": {
+        "light": "#e8b58f"
+      }
+    }
+  },
+  "font_sans": "Georgia, 'Times New Roman', serif",
+  "font_scale": "1.08",
+  "format": "grappelli-theme-editor/1"
+}

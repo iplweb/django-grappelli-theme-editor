@@ -1,0 +1,39 @@
+{
+  "name": "Forest",
+  "description": "Green accents on a calm, slightly warm background.",
+  "seeds": {
+    "light": {
+      "accent": "#2e7d32",
+      "chrome": "#1b3a1f",
+      "background": "#f6f8f4",
+      "text": "#263226"
+    },
+    "dark": {
+      "chrome": "#14261a"
+    }
+  },
+  "components": {
+    "buttons": {
+      "radius": 4
+    },
+    "modules": {
+      "header_surface": "flat"
+    },
+    "navbar": {
+      "border": 3,
+      "border_color": {
+        "light": "#7cb342",
+        "dark": "#558b2f"
+      },
+      "link": {
+        "light": "#a5d6a7"
+      }
+    },
+    "breadcrumbs": {
+      "link": {
+        "light": "#256b29"
+      }
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

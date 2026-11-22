@@ -1,0 +1,104 @@
+{
+  "name": "Terminal",
+  "description": "Green phosphor on black, monospace everywhere, square corners. Always dark.",
+  "color_scheme": "dark",
+  "font_sans": "ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace",
+  "font_mono": "ui-monospace, Menlo, Consolas, monospace",
+  "radius_scale": "0",
+  "seeds": {
+    "dark": {
+      "accent": "#39ff88",
+      "background": "#050805",
+      "text": "#b8f5c8",
+      "chrome": "#000000",
+      "danger": "#ff5f56",
+      "success": "#0f3d1f",
+      "warning": "#3d3a0f"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "always"
+    },
+    "navbar": {
+      "border": 1,
+      "border_color": {
+        "dark": "#39ff88"
+      },
+      "transform": "uppercase",
+      "link": {
+        "dark": "#39ff88"
+      }
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "dark": "#39ff88"
+      }
+    },
+    "buttons": {
+      "radius": 0,
+      "border": 1,
+      "transform": "uppercase",
+      "weight": "normal",
+      "border_color": {
+        "dark": "#39ff88"
+      }
+    },
+    "inputs": {
+      "radius": 0,
+      "inner_shadow": "none",
+      "weight": "normal",
+      "focus": "ring"
+    },
+    "modules": {
+      "radius": 0,
+      "group_radius": 0,
+      "header_transform": "uppercase",
+      "header_text_shadow": "none"
+    },
+    "filters": {
+      "radius": 0,
+      "search_radius": 0,
+      "open_shadow": "none"
+    },
+    "tables": {
+      "radius": 0,
+      "stripes": "off"
+    },
+    "messages": {
+      "radius": 0,
+      "style": "accent",
+      "weight": "normal"
+    },
+    "object_tools": {
+      "radius": 0,
+      "opacity": "full",
+      "transform": "uppercase"
+    },
+    "pagination": {
+      "radius": 0
+    },
+    "login": {
+      "radius": 0
+    },
+    "popups": {
+      "radius": 0,
+      "shadow": "none"
+    },
+    "icons": {
+      "add_icon": "custom",
+      "add_glyph": "[+]",
+      "search_icon": "custom",
+      "search_glyph": "›",
+      "filter_arrow": "chevron"
+    }
+  },
+  "format": "grappelli-theme-editor/1",
+  "dark_tokens": {
+    "--grp-form-button-background-color": "#0b3d1e",
+    "--grp-form-button-gradient-from": "#0b3d1e",
+    "--grp-form-button-border-color": "#39ff88"
+  }
+}

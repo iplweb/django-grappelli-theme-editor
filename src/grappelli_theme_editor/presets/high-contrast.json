@@ -1,0 +1,54 @@
+{
+  "name": "High contrast",
+  "description": "Maximum legibility: black on white, bigger text, no translucent buttons.",
+  "seeds": {
+    "light": {
+      "accent": "#0645ad",
+      "chrome": "#000000",
+      "background": "#ffffff",
+      "text": "#000000"
+    },
+    "dark": {
+      "accent": "#8ab4ff",
+      "background": "#000000",
+      "text": "#ffffff",
+      "chrome": "#000000"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "always"
+    },
+    "object_tools": {
+      "opacity": "full"
+    },
+    "buttons": {
+      "dim_secondary": "full",
+      "border": 2
+    },
+    "inputs": {
+      "border": 2,
+      "focus": "ring"
+    },
+    "modules": {
+      "border": 2,
+      "header_text_shadow": "none"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none"
+    },
+    "navbar": {
+      "link": {
+        "light": "#ffffff",
+        "dark": "#ffffff"
+      },
+      "link_hover": {
+        "light": "#ffd54f",
+        "dark": "#ffd54f"
+      }
+    }
+  },
+  "font_scale": "1.15",
+  "format": "grappelli-theme-editor/1"
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Material",
+  "description": "Indigo app bar, Roboto, elevated cards and uppercase buttons.",
+  "font_sans": "Roboto, 'Segoe UI', Arial, sans-serif",
+  "font_scale": "1.05",
+  "spacing_scale": "1.1",
+  "seeds": {
+    "light": {
+      "accent": "#3f51b5",
+      "background": "#fafafa",
+      "text": "#212121",
+      "chrome": "#303f9f"
+    },
+    "dark": {
+      "accent": "#8c9eff",
+      "background": "#121212",
+      "text": "#e0e0e0",
+      "chrome": "#1f1f1f"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "navbar": {
+      "background": {
+        "light": "#3f51b5",
+        "dark": "#1e2a5a"
+      },
+      "link": {
+        "light": "#ffffff",
+        "dark": "#c5cae9"
+      },
+      "link_hover": {
+        "light": "#c5cae9",
+        "dark": "#ffffff"
+      },
+      "padding_y": 15,
+      "title_size": 16,
+      "shadow": "medium"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "padding_y": 9,
+      "link": {
+        "light": "#303f9f"
+      }
+    },
+    "buttons": {
+      "radius": 4,
+      "height": 34,
+      "padding_x": 16,
+      "border": 0,
+      "transform": "uppercase",
+      "weight": "600",
+      "shadow": "soft",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 4,
+      "height": 32,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal"
+    },
+    "modules": {
+      "radius": 4,
+      "group_radius": 4,
+      "border": 0,
+      "shadow": "soft",
+      "spacing": 14,
+      "header_text_shadow": "none",
+      "header_surface": "flat"
+    },
+    "filters": {
+      "radius": 4,
+      "open_shadow": "strong",
+      "search_radius": 4
+    },
+    "tables": {
+      "radius": 4,
+      "grid": "rows",
+      "stripes": "off",
+      "row_hover": {
+        "light": "#eeeeee",
+        "dark": "#262626"
+      }
+    },
+    "messages": {
+      "radius": 4,
+      "shadow": "subtle",
+      "weight": "normal"
+    },
+    "object_tools": {
+      "radius": 4,
+      "opacity": "full",
+      "shadow": "soft",
+      "transform": "uppercase"
+    },
+    "footer": {
+      "surface": "flat",
+      "shadow": "soft",
+      "item_frame": "off"
+    },
+    "popups": {
+      "radius": 4,
+      "shadow": "strong"
+    },
+    "login": {
+      "radius": 4,
+      "shadow": "strong"
+    },
+    "icons": {
+      "submit_style": "icon_text",
+      "filter_arrow": "chevron"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

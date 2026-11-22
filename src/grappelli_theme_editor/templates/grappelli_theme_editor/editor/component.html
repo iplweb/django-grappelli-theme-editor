@@ -1,0 +1,40 @@
+{% load i18n %}
+<details class="gte-component gte-section" data-section="comp:{{ comp.key }}" data-comp-section="{{ comp.key }}" data-inspect="{{ comp.inspect }}"{% if comp.open or icons_tab %} open{% endif %}>
+    <summary class="gte-component-title">{{ comp.label }}<span class="gte-changed-count" data-changed-count hidden></span></summary>
+    {% if comp.description %}<p class="gte-hint">{{ comp.description }}</p>{% endif %}
+    <table class="gte-grid">
+        <tbody>
+        {% for prop in comp.props %}
+            <tr data-prop-row="{{ comp.key }}.{{ prop.key }}">
+                <th scope="row">{{ prop.label }}</th>
+                <td colspan="2">
+                    {% if prop.type == "length" %}
+                        <span class="gte-length">
+                            <input type="range" min="{{ prop.min }}" max="{{ prop.max }}" value="{{ prop.default }}" data-comp="{{ comp.key }}" data-prop="{{ prop.key }}" data-default="{{ prop.default }}" data-role="range" aria-label="{{ prop.label }}">
+                            <input type="number" min="{{ prop.min }}" max="{{ prop.max }}" placeholder="{{ prop.default }}" data-comp="{{ comp.key }}" data-prop="{{ prop.key }}" data-default="{{ prop.default }}" data-role="value" aria-label="{{ prop.label }}"> px
+                            <button type="button" class="gte-reset" data-reset title="{% translate 'Grappelli default' %}">↺</button>
+                        </span>
+                    {% elif prop.type == "choice" %}
+                        <select data-comp="{{ comp.key }}" data-prop="{{ prop.key }}" data-default="{{ prop.default }}" data-role="value" aria-label="{{ prop.label }}">
+                            {% for option in prop.options %}
+                                <option value="{{ option.0 }}"{% if option.0 == prop.default %} selected{% endif %}>{{ option.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    {% elif prop.type == "glyph" %}
+                        <span class="gte-glyph-wrap"><input type="text" class="gte-glyph" maxlength="8" placeholder="{{ prop.default }}" data-comp="{{ comp.key }}" data-prop="{{ prop.key }}" data-default="{{ prop.default }}" data-type="glyph" data-role="value" aria-label="{{ prop.label }}"><button type="button" class="gte-take-button gte-emoji-open" title="{% translate 'Pick an emoji' %}">😀 ▾</button></span>
+                    {% elif prop.type == "url" %}
+                        <input type="text" class="vTextField gte-url" placeholder="https://… / /media/…" data-comp="{{ comp.key }}" data-prop="{{ prop.key }}" data-default="" data-type="url" data-role="value" aria-label="{{ prop.label }}">
+                    {% elif prop.type == "color" %}
+                        <span class="gte-color-pair">
+                            <span class="gte-mode-label">{% translate "light" %}</span>
+                            {% include "grappelli_theme_editor/editor/color_input.html" with kind="comp" key=comp.key prop=prop.key mode="light" %}
+                            <span class="gte-mode-label">{% translate "dark" %}</span>
+                            {% include "grappelli_theme_editor/editor/color_input.html" with kind="comp" key=comp.key prop=prop.key mode="dark" %}
+                        </span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</details>

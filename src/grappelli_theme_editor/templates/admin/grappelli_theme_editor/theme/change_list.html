@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+{% load i18n static %}
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'grappelli_theme_editor/editor.css' %}">
+{% endblock %}
+{% block object-tools-items %}
+    {% if gte_reversion and gte_privileged %}
+        <li><a href="{% url 'admin:grappelli_theme_editor_theme_recoverlist' %}">{% translate "Recover deleted themes" %}</a></li>
+    {% endif %}
+    {% if has_add_permission %}
+        <li><a href="{% url 'admin:grappelli_theme_editor_theme_import' %}">{% translate "Import" %}</a></li>
+        <li><a href="{% url 'grappelli_theme_editor:my-theme' %}">{% translate "My appearance" %}</a></li>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

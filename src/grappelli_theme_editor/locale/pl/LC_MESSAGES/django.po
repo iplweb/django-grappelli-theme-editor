@@ -1,0 +1,1414 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-22 13:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+msgid "Typography & sizes"
+msgstr "Typografia i rozmiary"
+
+msgid ""
+"Fonts must be installed on the viewer's computer or uploaded under Admin "
+"themes › Fonts."
+msgstr ""
+"Czcionka musi być zainstalowana na komputerze oglądającego albo wgrana w "
+"Motywy panelu › Czcionki."
+
+msgid "Background image"
+msgstr "Obrazek tła"
+
+msgid "Custom CSS"
+msgstr "Własny CSS"
+
+msgid "Updating…"
+msgstr "Aktualizuję…"
+
+msgid "Preview failed: "
+msgstr "Podgląd nie powiódł się: "
+
+#, python-format
+msgid "Low contrast (%(mode)s): %(label)s — %(ratio)s:1, needs %(minimum)s:1"
+msgstr ""
+"Niski kontrast (%(mode)s): %(label)s — %(ratio)s:1, wymagane %(minimum)s:1"
+
+msgid "light"
+msgstr "jasny"
+
+msgid "dark"
+msgstr "ciemny"
+
+msgid "Base colours"
+msgstr "Kolory bazowe"
+
+msgid "Shapes & bars"
+msgstr "Kształty i belki"
+
+msgid "Colour tokens"
+msgstr "Kolory szczegółowe"
+
+msgid "Nothing in this theme changes this element."
+msgstr "Ten motyw nie zmienia tego elementu."
+
+#, python-format
+msgid "Taken from “%(name)s” — not saved yet."
+msgstr "Wzięto z „%(name)s” — jeszcze niezapisane."
+
+msgid ""
+"This browser cannot list installed fonts (only Chrome and Edge can). Type "
+"the font name into the field instead."
+msgstr ""
+"Ta przeglądarka nie potrafi wyświetlić zainstalowanych czcionek (potrafią "
+"tylko Chrome i Edge). Wpisz nazwę czcionki w pole."
+
+msgid "Permission to read local fonts was denied."
+msgstr "Odmówiono dostępu do czcionek zainstalowanych na komputerze."
+
+msgid "Choose…"
+msgstr "Wybierz…"
+
+msgid "Search fonts…"
+msgstr "Szukaj czcionek…"
+
+msgid "Safe system fonts — no downloads"
+msgstr "Bezpieczne czcionki systemowe — bez pobierania"
+
+msgid "Your fonts"
+msgstr "Twoje czcionki"
+
+#, python-format
+msgid "Web fonts from %(name)s"
+msgstr "Web fonty z %(name)s"
+
+#, python-format
+msgid ""
+"⚠ Picking one makes every admin user's browser download it from %(host)s."
+msgstr ""
+"⚠ Po wyborze przeglądarka każdego użytkownika panelu pobierze ją z %(host)s."
+
+#, python-format
+msgid "Show previews (contacts %(host)s now)"
+msgstr "Pokaż podgląd (łączy się teraz z %(host)s)"
+
+msgid "Fonts on this computer"
+msgstr "Czcionki na tym komputerze"
+
+msgid "Detect installed fonts (Chrome/Edge; others may not have them)"
+msgstr "Wykryj zainstalowane czcionki (Chrome/Edge; inni mogą ich nie mieć)"
+
+msgid "Add another web font by URL…"
+msgstr "Dodaj inny web font z adresu…"
+
+msgid "Family name"
+msgstr "Nazwa rodziny"
+
+msgid "Stylesheet URL (https://…)"
+msgstr "Adres arkusza (https://…)"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "web"
+msgstr "web"
+
+#, python-format
+msgid ""
+"⚠ Web font in use (%(fonts)s): every admin user's browser downloads it from "
+"%(hosts)s, a third-party server. For a fully self-hosted admin, download the"
+" font and upload the files under Fonts."
+msgstr ""
+"⚠ Używasz web fontu (%(fonts)s): przeglądarka każdego użytkownika panelu "
+"pobiera go z %(hosts)s, czyli z zewnętrznego serwera. Żeby panel nie "
+"korzystał z obcych serwerów, pobierz czcionkę i wgraj pliki w Czcionkach."
+
+msgid ""
+"Google receives the users' IP addresses — in the EU this may need consent "
+"(GDPR)."
+msgstr ""
+"Google otrzymuje adresy IP użytkowników — w UE może to wymagać zgody (RODO)."
+
+msgid "colours"
+msgstr "kolory"
+
+msgid "site default"
+msgstr "domyślny dla serwisu"
+
+msgid "Site default"
+msgstr "Domyślny serwisu"
+
+msgid "Make site default"
+msgstr "Ustaw jako domyślny"
+
+msgid "Make the selected theme the site default"
+msgstr "Ustaw zaznaczony motyw jako domyślny dla serwisu"
+
+msgid "Select exactly one theme."
+msgstr "Zaznacz dokładnie jeden motyw."
+
+msgid "A private theme cannot be the site default."
+msgstr "Motyw prywatny nie może być domyślny dla serwisu."
+
+msgid "Made the site default"
+msgstr "Ustawiono jako domyślny serwisu"
+
+#, python-format
+msgid "“%(name)s” is now the site default."
+msgstr "„%(name)s” jest teraz motywem domyślnym serwisu."
+
+msgid "Duplicate selected themes"
+msgstr "Duplikuj zaznaczone motywy"
+
+msgid "Themes duplicated."
+msgstr "Zduplikowano motywy."
+
+msgid "Export the selected theme (JSON)"
+msgstr "Eksportuj zaznaczony motyw (JSON)"
+
+msgid "This is not a JSON file."
+msgstr "To nie jest plik JSON."
+
+#, python-format
+msgid "Invalid theme file: %(error)s"
+msgstr "Nieprawidłowy plik motywu: %(error)s"
+
+#, python-format
+msgid "Imported “%(name)s”."
+msgstr "Zaimportowano „%(name)s”."
+
+msgid "Import theme"
+msgstr "Import motywu"
+
+msgid "Admin themes"
+msgstr "Motywy panelu"
+
+msgid "As in Grappelli"
+msgstr "Jak w Grappelli"
+
+msgid "None"
+msgstr "Brak"
+
+msgid "Subtle"
+msgstr "Delikatny"
+
+msgid "Soft"
+msgstr "Miękki"
+
+msgid "Medium"
+msgstr "Średni"
+
+msgid "Strong"
+msgstr "Mocny"
+
+msgid "Floating"
+msgstr "Unoszący się"
+
+msgid "Hard offset (brutalist)"
+msgstr "Twardy, przesunięty (brutalizm)"
+
+msgid "Normal"
+msgstr "Normalne"
+
+msgid "UPPERCASE"
+msgstr "WIELKIE LITERY"
+
+msgid "Small caps"
+msgstr "Kapitaliki"
+
+msgid "Semi-bold"
+msgstr "Półgruba"
+
+msgid "Bold"
+msgstr "Gruba"
+
+msgid "Enter a whole number."
+msgstr "Wpisz liczbę całkowitą."
+
+#, python-format
+msgid "Enter a value between %(min)s and %(max)s."
+msgstr "Wpisz wartość od %(min)s do %(max)s."
+
+msgid "Pick one of the offered options."
+msgstr "Wybierz jedną z dostępnych opcji."
+
+msgid "Expected light and/or dark colour."
+msgstr "Oczekiwano koloru dla trybu jasnego i/lub ciemnego."
+
+msgid "Enter an icon (an emoji or a character)."
+msgstr "Wpisz ikonę (emoji albo znak)."
+
+msgid "An icon may have 1 to 8 characters."
+msgstr "Ikona może mieć od 1 do 8 znaków."
+
+msgid "This icon contains a character that is not allowed."
+msgstr "Ikona zawiera niedozwolony znak."
+
+msgid ""
+"Enter an https:// address or a path starting with /, without spaces, quotes "
+"or brackets."
+msgstr ""
+"Podaj adres https:// albo ścieżkę zaczynającą się od /, bez spacji, "
+"cudzysłowów i nawiasów."
+
+msgid "Gradient (Grappelli)"
+msgstr "Gradient (Grappelli)"
+
+msgid "Flat colour"
+msgstr "Jednolity kolor"
+
+msgid "No image"
+msgstr "Bez obrazka"
+
+msgid "Tile"
+msgstr "Kafelki"
+
+msgid "Stretch to fill"
+msgstr "Rozciągnij na całość"
+
+msgid "Fit (whole image)"
+msgstr "Dopasuj (cały obrazek)"
+
+msgid "Top left"
+msgstr "Lewy górny róg"
+
+msgid "Top right"
+msgstr "Prawy górny róg"
+
+msgid "Bottom left"
+msgstr "Lewy dolny róg"
+
+msgid "Bottom right"
+msgstr "Prawy dolny róg"
+
+msgid "Centre"
+msgstr "Środek"
+
+msgid "Grappelli icon"
+msgstr "Ikona Grappelli"
+
+msgid "No icon"
+msgstr "Bez ikony"
+
+msgid "Outline icon (built-in)"
+msgstr "Ikona konturowa (wbudowana)"
+
+msgid "My emoji / character (below)"
+msgstr "Moje emoji / znak (poniżej)"
+
+msgid "Icons & labels"
+msgstr "Ikony i napisy"
+
+msgid "“Add” button icon"
+msgstr "Ikona przycisku „Dodaj”"
+
+msgid "My “Add” icon"
+msgstr "Moja ikona „Dodaj”"
+
+msgid "Search field magnifier"
+msgstr "Lupa w polu wyszukiwania"
+
+msgid "My search icon"
+msgstr "Moja ikona wyszukiwania"
+
+msgid "Filter box arrow"
+msgstr "Strzałka okna filtrów"
+
+msgid "Grappelli arrow"
+msgstr "Strzałka Grappelli"
+
+msgid "Text chevron ▾"
+msgstr "Tekstowa strzałka ▾"
+
+msgid "No arrow"
+msgstr "Bez strzałki"
+
+msgid "Save / delete buttons"
+msgstr "Przyciski zapisu i usuwania"
+
+msgid "Text only (Grappelli)"
+msgstr "Tylko tekst (Grappelli)"
+
+msgid "Icon and text"
+msgstr "Ikona i tekst"
+
+msgid "Icon only"
+msgstr "Tylko ikona"
+
+msgid "Icons on the save / delete buttons"
+msgstr "Ikony na przyciskach zapisu i usuwania"
+
+msgid "Emoji / characters (below)"
+msgstr "Emoji / znaki (poniżej)"
+
+msgid "Outline icons, white"
+msgstr "Ikony konturowe, białe"
+
+msgid "Outline icons, dark"
+msgstr "Ikony konturowe, ciemne"
+
+msgid "“Save” icon"
+msgstr "Ikona „Zapisz”"
+
+msgid "“Save and continue editing” icon"
+msgstr "Ikona „Zapisz i kontynuuj edycję”"
+
+msgid "“Save and add another” icon"
+msgstr "Ikona „Zapisz i dodaj nowy”"
+
+msgid "“Delete” icon"
+msgstr "Ikona „Usuń”"
+
+msgid "“Save” image URL (optional)"
+msgstr "Adres obrazka „Zapisz” (opcjonalnie)"
+
+msgid "“Save and continue” image URL (optional)"
+msgstr "Adres obrazka „Zapisz i kontynuuj” (opcjonalnie)"
+
+msgid "“Save and add another” image URL (optional)"
+msgstr "Adres obrazka „Zapisz i dodaj nowy” (opcjonalnie)"
+
+msgid "“Delete” image URL (optional)"
+msgstr "Adres obrazka „Usuń” (opcjonalnie)"
+
+msgid ""
+"Swap or hide Grappelli's icons and put icons on the save/delete buttons: "
+"emoji, built-in outline icons or your own images (an image URL wins over the"
+" emoji)."
+msgstr ""
+"Podmień albo ukryj ikony Grappelli i dodaj ikony na przyciskach zapisu i "
+"usuwania: emoji, wbudowane ikony konturowe albo własne obrazki (adres "
+"obrazka ma pierwszeństwo przed emoji)."
+
+msgid "General"
+msgstr "Ogólne"
+
+msgid "Surfaces"
+msgstr "Powierzchnie"
+
+msgid "Gradients (Grappelli)"
+msgstr "Gradienty (Grappelli)"
+
+msgid "Flat everywhere"
+msgstr "Płasko wszędzie"
+
+msgid "Page side margin"
+msgstr "Margines boczny strony"
+
+msgid "Links in content"
+msgstr "Linki w treści"
+
+msgid "No underline (Grappelli)"
+msgstr "Bez podkreślenia (Grappelli)"
+
+msgid "Underline on hover"
+msgstr "Podkreślenie po najechaniu"
+
+msgid "Always underlined"
+msgstr "Zawsze podkreślone"
+
+msgid "Background image (upload it above)"
+msgstr "Obrazek tła (wgraj go wyżej)"
+
+msgid "Background image when scrolling"
+msgstr "Obrazek tła przy przewijaniu"
+
+msgid "Scrolls with the page"
+msgstr "Przewija się razem ze stroną"
+
+msgid "Stays in place"
+msgstr "Zostaje w miejscu"
+
+msgid "Global switches that touch the whole admin."
+msgstr "Globalne przełączniki dla całego panelu."
+
+msgid "Top bar"
+msgstr "Górna belka"
+
+msgid "Background"
+msgstr "Tło"
+
+msgid "Fill"
+msgstr "Wypełnienie"
+
+msgid "Title colour"
+msgstr "Kolor tytułu"
+
+msgid "Link colour"
+msgstr "Kolor linków"
+
+msgid "Link hover colour"
+msgstr "Kolor linków po najechaniu"
+
+msgid "Height (vertical padding)"
+msgstr "Wysokość (odstęp pionowy)"
+
+msgid "Side padding"
+msgstr "Odstęp boczny"
+
+msgid "Title size"
+msgstr "Rozmiar tytułu"
+
+msgid "Lettering"
+msgstr "Litery"
+
+msgid "Bottom border"
+msgstr "Dolna krawędź"
+
+msgid "Bottom border colour"
+msgstr "Kolor dolnej krawędzi"
+
+msgid "Shadow"
+msgstr "Cień"
+
+msgid "Drop-down menu rounding"
+msgstr "Zaokrąglenie rozwijanego menu"
+
+msgid "Drop-down menu shadow"
+msgstr "Cień rozwijanego menu"
+
+msgid "Behaviour when scrolling"
+msgstr "Zachowanie przy przewijaniu"
+
+msgid "Always visible (Grappelli)"
+msgstr "Zawsze widoczna (Grappelli)"
+
+msgid "Scrolls away with the page"
+msgstr "Przewija się razem ze stroną"
+
+msgid "Grappelli's dark bar at the top: site title and user menu."
+msgstr "Ciemna belka Grappelli u góry: tytuł serwisu i menu użytkownika."
+
+msgid "Breadcrumbs bar"
+msgstr "Pasek nawigacji okruszkowej"
+
+msgid "Current page colour"
+msgstr "Kolor bieżącej strony"
+
+msgid "Text shadow"
+msgstr "Cień tekstu"
+
+msgid "Embossed (Grappelli)"
+msgstr "Wytłoczony (Grappelli)"
+
+msgid "Visibility"
+msgstr "Widoczność"
+
+msgid "Visible"
+msgstr "Widoczny"
+
+msgid "Hidden"
+msgstr "Ukryty"
+
+msgid "Buttons"
+msgstr "Przyciski"
+
+msgid "Rounding"
+msgstr "Zaokrąglenie"
+
+msgid "Height"
+msgstr "Wysokość"
+
+msgid "Border width"
+msgstr "Grubość obramowania"
+
+msgid "Border colour"
+msgstr "Kolor ramki"
+
+msgid "Font weight"
+msgstr "Grubość pisma"
+
+msgid "Secondary buttons in the submit row"
+msgstr "Przyciski dodatkowe w pasku zapisu"
+
+msgid "Dimmed until hover (Grappelli)"
+msgstr "Przygaszone do najechania (Grappelli)"
+
+msgid "Fully opaque"
+msgstr "W pełni widoczne"
+
+msgid "Form fields"
+msgstr "Pola formularzy"
+
+msgid "Inner shadow"
+msgstr "Cień wewnętrzny"
+
+msgid "Inset (Grappelli)"
+msgstr "Wklęsły (Grappelli)"
+
+msgid "Focus highlight"
+msgstr "Wyróżnienie aktywnego pola"
+
+msgid "Darker border (Grappelli)"
+msgstr "Ciemniejsza ramka (Grappelli)"
+
+msgid "Accent ring"
+msgstr "Obwódka w kolorze akcentu"
+
+msgid "Modules & fieldsets"
+msgstr "Moduły i grupy pól"
+
+msgid "Inline group rounding"
+msgstr "Zaokrąglenie grup inline"
+
+msgid "Space between modules"
+msgstr "Odstęp między modułami"
+
+msgid "Header background"
+msgstr "Tło nagłówka"
+
+msgid "Header text colour"
+msgstr "Kolor tekstu nagłówka"
+
+msgid "Header fill"
+msgstr "Wypełnienie nagłówka"
+
+msgid "Header height (vertical padding)"
+msgstr "Wysokość nagłówka (odstęp pionowy)"
+
+msgid "Header text size"
+msgstr "Rozmiar tekstu nagłówka"
+
+msgid "Header lettering"
+msgstr "Litery w nagłówku"
+
+msgid "Header text shadow"
+msgstr "Cień tekstu nagłówka"
+
+msgid "Filters & search"
+msgstr "Filtry i wyszukiwanie"
+
+msgid "Filter box rounding"
+msgstr "Zaokrąglenie okna filtrów"
+
+msgid "Filter box border width"
+msgstr "Grubość ramki okna filtrów"
+
+msgid "Shadow of the open filter box"
+msgstr "Cień otwartego okna filtrów"
+
+msgid "Large glow (Grappelli)"
+msgstr "Duża poświata (Grappelli)"
+
+msgid "Search field rounding"
+msgstr "Zaokrąglenie pola wyszukiwania"
+
+msgid "The change list's filter drop-down/sidebar and the search box."
+msgstr "Rozwijane okno lub panel filtrów listy oraz pole wyszukiwania."
+
+msgid "Tables & change lists"
+msgstr "Tabele i listy"
+
+msgid "Row height (vertical padding)"
+msgstr "Wysokość wiersza (odstęp pionowy)"
+
+msgid "Cell side padding"
+msgstr "Odstęp boczny w komórkach"
+
+msgid "Zebra stripes"
+msgstr "Naprzemienne pasy"
+
+msgid "On (Grappelli)"
+msgstr "Włączone (Grappelli)"
+
+msgid "Off"
+msgstr "Wyłączone"
+
+msgid "Cell borders"
+msgstr "Krawędzie komórek"
+
+msgid "Grid (Grappelli)"
+msgstr "Siatka (Grappelli)"
+
+msgid "Horizontal lines only"
+msgstr "Tylko linie poziome"
+
+msgid "Row hover colour"
+msgstr "Kolor wiersza po najechaniu"
+
+msgid "Empty area next to the table"
+msgstr "Pusta przestrzeń obok tabeli"
+
+msgid "Diagonal stripes (Grappelli)"
+msgstr "Ukośne paski (Grappelli)"
+
+msgid "Plain"
+msgstr "Gładka"
+
+msgid "Stripes ╱"
+msgstr "Paski ╱"
+
+msgid "Stripes ╲"
+msgstr "Paski ╲"
+
+msgid "Vertical lines"
+msgstr "Pionowe linie"
+
+msgid "Dots"
+msgstr "Kropki"
+
+msgid "Grid"
+msgstr "Kratka"
+
+msgid "My image (below)"
+msgstr "Mój obrazek (poniżej)"
+
+msgid "Pattern colour"
+msgstr "Kolor wzoru"
+
+msgid "Pattern spacing"
+msgstr "Odstęp wzoru"
+
+msgid "Pattern image URL"
+msgstr "Adres obrazka wzoru"
+
+msgid "Messages"
+msgstr "Komunikaty"
+
+msgid "Vertical padding"
+msgstr "Odstęp pionowy"
+
+msgid "Style"
+msgstr "Styl"
+
+msgid "Bordered box (Grappelli)"
+msgstr "Pole z ramką (Grappelli)"
+
+msgid "Thick left edge"
+msgstr "Gruba lewa krawędź"
+
+msgid "Object tools (Add, History…)"
+msgstr "Narzędzia obiektu (Dodaj, Historia…)"
+
+msgid "Resting state"
+msgstr "Stan spoczynkowy"
+
+msgid "Half-transparent (Grappelli)"
+msgstr "Półprzezroczyste (Grappelli)"
+
+msgid "Bottom submit bar"
+msgstr "Dolny pasek zapisu"
+
+msgid "Position"
+msgstr "Położenie"
+
+msgid "Fixed at the bottom (Grappelli)"
+msgstr "Przypięty na dole (Grappelli)"
+
+msgid "Glued to the bottom edge, full width"
+msgstr "Przyklejony do dolnej krawędzi, na całą szerokość"
+
+msgid "Dock: centred, only as wide as the buttons"
+msgstr "Dock: wyśrodkowany, szeroki tylko na przyciski"
+
+msgid "At the end of the form (does not float)"
+msgstr "Na końcu formularza (nie pływa)"
+
+msgid "Button frame rounding"
+msgstr "Zaokrąglenie ramek przycisków"
+
+msgid "Button frame colour"
+msgstr "Kolor ramek przycisków"
+
+msgid "Button frames"
+msgstr "Ramki przycisków"
+
+msgid "Shown (Grappelli)"
+msgstr "Widoczne (Grappelli)"
+
+msgid "Pagination"
+msgstr "Stronicowanie"
+
+msgid "Gap"
+msgstr "Odstęp"
+
+msgid "Login page"
+msgstr "Strona logowania"
+
+msgid "Page background"
+msgstr "Tło strony"
+
+msgid "Login box rounding"
+msgstr "Zaokrąglenie okna logowania"
+
+msgid "Login box shadow"
+msgstr "Cień okna logowania"
+
+msgid "Date picker & pop-ups"
+msgstr "Kalendarz i okienka"
+
+msgid "Component styles must be a JSON object."
+msgstr "Style komponentów muszą być obiektem JSON."
+
+#, python-format
+msgid "Unknown component %(key)s."
+msgstr "Nieznany komponent %(key)s."
+
+#, python-format
+msgid "Unknown property %(c)s.%(p)s."
+msgstr "Nieznana właściwość %(c)s.%(p)s."
+
+msgid "Body text"
+msgstr "Tekst strony"
+
+msgid "Links"
+msgstr "Linki"
+
+msgid "Text in modules"
+msgstr "Tekst w modułach"
+
+msgid "Form labels"
+msgstr "Etykiety pól"
+
+msgid "Text in form fields"
+msgstr "Tekst w polach formularzy"
+
+msgid "Top bar title"
+msgstr "Tytuł na górnej belce"
+
+msgid "Top bar links"
+msgstr "Linki na górnej belce"
+
+msgid "Breadcrumb links"
+msgstr "Linki nawigacji okruszkowej"
+
+msgid "Primary button label"
+msgstr "Napis na głównym przycisku"
+
+msgid "Table rows"
+msgstr "Wiersze tabel"
+
+msgid "Success message"
+msgstr "Komunikat o sukcesie"
+
+msgid "Error message"
+msgstr "Komunikat o błędzie"
+
+msgid "Theme file (.json)"
+msgstr "Plik motywu (.json)"
+
+msgid "A file exported from this editor."
+msgstr "Plik wyeksportowany z tego edytora."
+
+#, python-format
+msgid "The file may be at most %(kb)d kB."
+msgstr "Plik może mieć najwyżej %(kb)d kB."
+
+msgid "This is not a PNG, JPEG, GIF or WebP image."
+msgstr "To nie jest obrazek PNG, JPEG, GIF ani WebP."
+
+msgid "This is not a WOFF2, WOFF, TTF or OTF font."
+msgstr "To nie jest czcionka WOFF2, WOFF, TTF ani OTF."
+
+msgid "Follow the light/dark toggle"
+msgstr "Zgodnie z przełącznikiem jasny/ciemny"
+
+msgid "Always light"
+msgstr "Zawsze jasny"
+
+msgid "Always dark"
+msgstr "Zawsze ciemny"
+
+msgid "name"
+msgstr "nazwa"
+
+msgid "slug"
+msgstr "identyfikator"
+
+msgid "description"
+msgstr "opis"
+
+msgid "owner"
+msgstr "właściciel"
+
+msgid "Empty = shared theme, available to everybody."
+msgstr "Puste = motyw wspólny, dostępny dla wszystkich."
+
+msgid ""
+"Used for everybody who has not picked a theme, including the login page. "
+"Only shared themes can be the site default."
+msgstr ""
+"Używany przez wszystkich, którzy nie wybrali motywu, także na stronie "
+"logowania. Domyślny może być tylko motyw wspólny."
+
+msgid "light/dark mode"
+msgstr "tryb jasny/ciemny"
+
+msgid "base colours"
+msgstr "kolory bazowe"
+
+msgid "light mode overrides"
+msgstr "nadpisania trybu jasnego"
+
+msgid "dark mode overrides"
+msgstr "nadpisania trybu ciemnego"
+
+msgid "component styles"
+msgstr "style komponentów"
+
+msgid "Shapes, shadows, spacing and bars, see components.py."
+msgstr "Kształty, cienie, odstępy i belki, zob. components.py."
+
+msgid "interface font"
+msgstr "czcionka interfejsu"
+
+msgid "CSS font-family list. Empty = Grappelli's Arial."
+msgstr "Lista font-family w CSS. Puste = Arial z Grappelli."
+
+msgid "monospace font"
+msgstr "czcionka o stałej szerokości"
+
+msgid "headings font"
+msgstr "czcionka nagłówków"
+
+msgid "Page titles and module headers. Empty = interface font."
+msgstr "Tytuły stron i nagłówki modułów. Puste = czcionka interfejsu."
+
+msgid "labels font"
+msgstr "czcionka etykiet"
+
+msgid "Form and filter labels. Empty = interface font."
+msgstr "Etykiety formularzy i filtrów. Puste = czcionka interfejsu."
+
+msgid "form fields font"
+msgstr "czcionka pól formularzy"
+
+msgid "Text inside inputs, selects and text areas."
+msgstr "Tekst w polach, listach wyboru i polach tekstowych."
+
+msgid "web font service"
+msgstr "serwis web fontów"
+
+msgid "Where the web fonts picked from the list are loaded from."
+msgstr "Skąd są pobierane web fonty wybrane z listy."
+
+msgid "font size"
+msgstr "rozmiar czcionki"
+
+msgid "Multiplier for all font sizes, 1.00 = Grappelli default."
+msgstr "Mnożnik wszystkich rozmiarów czcionek, 1,00 = domyślnie w Grappelli."
+
+msgid "corner rounding"
+msgstr "zaokrąglenie narożników"
+
+msgid "0 = square corners, 1.00 = Grappelli default."
+msgstr "0 = ostre narożniki, 1,00 = domyślnie w Grappelli."
+
+msgid "density"
+msgstr "gęstość"
+
+msgid "Multiplier for paddings: below 1.00 = more compact, above = airier."
+msgstr "Mnożnik odstępów: poniżej 1,00 = ciaśniej, powyżej = przestronniej."
+
+msgid "background image"
+msgstr "obrazek tła"
+
+msgid ""
+"A small picture for the page background or the empty area next to tables; "
+"choose how it is placed under Shapes & bars."
+msgstr ""
+"Niewielki obrazek na tło strony albo pustą przestrzeń obok tabel; sposób "
+"ułożenia wybierzesz w „Kształty i belki”."
+
+msgid "custom CSS"
+msgstr "własny CSS"
+
+msgid "Appended verbatim. Only superusers can edit it."
+msgstr "Dołączany bez zmian. Edytować mogą tylko superużytkownicy."
+
+msgid "theme"
+msgstr "motyw"
+
+msgid "themes"
+msgstr "motywy"
+
+msgid "The file does not contain a theme."
+msgstr "Plik nie zawiera motywu."
+
+msgid "normal"
+msgstr "normalny"
+
+msgid "italic"
+msgstr "kursywa"
+
+msgid "family name"
+msgstr "nazwa rodziny"
+
+msgid "Use this name in a theme's font field, e.g. \"Inter\"."
+msgstr "Tej nazwy użyj w polu czcionki motywu, np. \"Inter\"."
+
+msgid "font file"
+msgstr "plik czcionki"
+
+msgid "Upload a font file (self-hosted)…"
+msgstr "Wgraj plik czcionki (na własnym serwerze)…"
+
+msgid "web font stylesheet URL"
+msgstr "adres arkusza web fontu"
+
+msgid ""
+"…or link a web font stylesheet, e.g. "
+"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+" — then weight and style below are ignored."
+msgstr ""
+"…albo podaj adres arkusza web fontu, np. "
+"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+" — wtedy grubość i styl poniżej są pomijane."
+
+msgid "weight"
+msgstr "grubość"
+
+msgid "style"
+msgstr "styl"
+
+msgid "font"
+msgstr "czcionka"
+
+msgid "fonts"
+msgstr "czcionki"
+
+msgid "Upload a font file or enter a web font URL (exactly one)."
+msgstr "Wgraj plik czcionki albo podaj adres web fontu (dokładnie jedno)."
+
+msgid "Web fonts are disabled in the settings."
+msgstr "Web fonty są wyłączone w ustawieniach."
+
+msgid "Empty = use the site default."
+msgstr "Puste = motyw domyślny serwisu."
+
+msgid "user theme preference"
+msgstr "wybór motywu użytkownika"
+
+msgid "user theme preferences"
+msgstr "wybory motywów użytkowników"
+
+msgid "Accent (links, primary buttons)"
+msgstr "Akcent (linki, główne przyciski)"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Header & footer bar"
+msgstr "Belka nagłówka i stopki"
+
+msgid "Errors & delete"
+msgstr "Błędy i usuwanie"
+
+msgid "Success messages"
+msgstr "Komunikaty o sukcesie"
+
+msgid "Warning messages"
+msgstr "Ostrzeżenia"
+
+msgid "Stop trying"
+msgstr "Zakończ próbę"
+
+msgid "Use the saved version of this theme in this browser session only"
+msgstr "Użyj zapisanej wersji tego motywu tylko w tej sesji przeglądarki"
+
+msgid "Try for this session"
+msgstr "Wypróbuj w tej sesji"
+
+msgid "Export"
+msgstr "Eksportuj"
+
+msgid ""
+"This is an older version of the theme, shown in the live preview. Press Save"
+" to restore it."
+msgstr ""
+"To starsza wersja motywu, widoczna w podglądzie na żywo. Kliknij Zapisz, "
+"żeby ją przywrócić."
+
+msgid "This is a deleted theme. Press Save to recover it."
+msgstr "To usunięty motyw. Kliknij Zapisz, żeby go odzyskać."
+
+msgid "Colours"
+msgstr "Kolory"
+
+msgid "Icons"
+msgstr "Ikony"
+
+msgid "Typography"
+msgstr "Typografia"
+
+msgid "All colour tokens"
+msgstr "Wszystkie kolory"
+
+msgid "Load from…"
+msgstr "Wczytaj z…"
+
+msgid ""
+"Pick a few base colours; every other colour of the admin is derived from "
+"them. Empty = Grappelli's colour. Dark mode follows the light accent colours"
+" automatically unless you set them."
+msgstr ""
+"Wybierz kilka kolorów bazowych, a pozostałe kolory panelu zostaną z nich "
+"wyliczone. Puste = kolor Grappelli. Tryb ciemny automatycznie podąża za "
+"kolorami akcentu z trybu jasnego, chyba że ustawisz je osobno."
+
+msgid "Light mode"
+msgstr "Tryb jasny"
+
+msgid "Dark mode"
+msgstr "Tryb ciemny"
+
+#, python-format
+msgid ""
+"Use “Choose…” next to a field to pick a font, or type any CSS font-family. "
+"Uploaded fonts and web fonts added under <a "
+"href=\"%(gte_fonts_url)s\">Fonts</a> appear in the menu too."
+msgstr ""
+"Użyj „Wybierz…” przy polu, żeby wybrać czcionkę, albo wpisz dowolną wartość "
+"CSS font-family. Czcionki wgrane i web fonty dodane w <a "
+"href=\"%(gte_fonts_url)s\">Czcionkach</a> też pojawią się w menu."
+
+msgid ""
+"Override single colours. Placeholders show the value currently in effect "
+"(Grappelli's default or derived from the base colours)."
+msgstr ""
+"Nadpisz pojedyncze kolory. Podpowiedzi w polach pokazują obecnie "
+"obowiązującą wartość (domyślną z Grappelli albo wyliczoną z kolorów "
+"bazowych)."
+
+msgid "Filter tokens…"
+msgstr "Filtruj kolory…"
+
+msgid ""
+"Copy one part of another theme into this one — the rest stays as it is. "
+"Nothing is saved until you press Save."
+msgstr ""
+"Skopiuj jedną część innego motywu do tego — reszta zostaje bez zmian. Nic "
+"się nie zapisze, dopóki nie klikniesz Zapisz."
+
+msgid "Take from"
+msgstr "Weź z"
+
+msgid "shapes & bars"
+msgstr "kształty i belki"
+
+msgid "fonts & sizes"
+msgstr "czcionki i rozmiary"
+
+msgid "There are no other themes to load from yet."
+msgstr "Nie ma jeszcze innych motywów, z których można wczytać."
+
+msgid "Live preview"
+msgstr "Podgląd na żywo"
+
+msgid "Light"
+msgstr "Jasny"
+
+msgid "Dark"
+msgstr "Ciemny"
+
+msgid ""
+"Click an element in the preview to see where its look can be changed. Turn "
+"off to use links and filters in the preview."
+msgstr ""
+"Kliknij element w podglądzie, aby zobaczyć, gdzie można zmienić jego wygląd."
+" Wyłącz, aby korzystać z linków i filtrów w podglądzie."
+
+msgid "Inspect"
+msgstr "Inspektor"
+
+msgid "Selected"
+msgstr "Zaznaczono"
+
+msgid "Clear selection"
+msgstr "Wyczyść zaznaczenie"
+
+#, python-format
+msgid ""
+"This is a shared theme. To change it for yourself, use “Customise a copy” on"
+" the <a href=\"%(me_url)s\">Appearance</a> page."
+msgstr ""
+"To jest motyw wspólny. Aby zmienić go dla siebie, użyj „Dostosuj kopię” na "
+"stronie <a href=\"%(me_url)s\">Wygląd</a>."
+
+msgid "Recover deleted themes"
+msgstr "Odzyskaj usunięte motywy"
+
+msgid "Import"
+msgstr "Importuj"
+
+msgid "My appearance"
+msgstr "Mój wygląd"
+
+msgid "Home"
+msgstr "Start"
+
+msgid "Not set: Grappelli default"
+msgstr "Nie ustawiono: wartość domyślna Grappelli"
+
+msgid "default"
+msgstr "domyślny"
+
+msgid "Reset to default"
+msgstr "Przywróć domyślne"
+
+msgid "Grappelli default"
+msgstr "Domyślnie w Grappelli"
+
+msgid "Pick an emoji"
+msgstr "Wybierz emoji"
+
+msgid "Expand all"
+msgstr "Rozwiń wszystko"
+
+msgid "Collapse all"
+msgstr "Zwiń wszystko"
+
+msgid "New theme"
+msgstr "Nowy motyw"
+
+msgid ""
+"Choose how the administration looks for you. This does not change what other"
+" people see."
+msgstr ""
+"Wybierz, jak panel ma wyglądać dla Ciebie. Nie zmienia to tego, co widzą "
+"inni."
+
+#, python-format
+msgid ""
+"You are trying “%(name)s” in this browser session. It is not saved as your "
+"choice."
+msgstr ""
+"Próbujesz „%(name)s” w tej sesji przeglądarki. Nie zapisano tego jako "
+"Twojego wyboru."
+
+msgid "Grappelli"
+msgstr "Grappelli"
+
+msgid "private"
+msgstr "prywatny"
+
+msgid "shared"
+msgstr "wspólny"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "Customise a copy"
+msgstr "Dostosuj kopię"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Bibliography"
+msgstr "Bibliografia"
+
+msgid "Add report"
+msgstr "Dodaj raport"
+
+msgid "History"
+msgstr "Historia"
+
+msgid "Information: this is a preview of your theme."
+msgstr "Informacja: to podgląd Twojego motywu."
+
+msgid "The report was added successfully."
+msgstr "Raport został dodany."
+
+msgid "Some fields are still empty."
+msgstr "Niektóre pola są jeszcze puste."
+
+msgid "The report could not be deleted."
+msgstr "Nie udało się usunąć raportu."
+
+msgid "Filter"
+msgstr "Filtr"
+
+msgid "By year"
+msgstr "Według roku"
+
+msgid "All"
+msgstr "Wszystkie"
+
+msgid "By status"
+msgstr "Według statusu"
+
+msgid "Draft"
+msgstr "Szkic"
+
+msgid "results"
+msgstr "wyników"
+
+msgid "Show all"
+msgstr "Pokaż wszystkie"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "Year"
+msgstr "Rok"
+
+msgid "Published"
+msgstr "Opublikowany"
+
+msgid "Change report"
+msgstr "Zmień raport"
+
+msgid "Please correct the error below."
+msgstr "Popraw poniższy błąd."
+
+msgid "Basic information"
+msgstr "Podstawowe informacje"
+
+msgid "Annual report 2026"
+msgstr "Raport roczny 2026"
+
+msgid "Shown on the public page."
+msgstr "Widoczne na stronie publicznej."
+
+msgid "Enter a valid ISBN."
+msgstr "Wpisz poprawny ISBN."
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Kind"
+msgstr "Rodzaj"
+
+msgid "Article"
+msgstr "Artykuł"
+
+msgid "Book"
+msgstr "Książka"
+
+msgid "Abstract"
+msgstr "Streszczenie"
+
+msgid "Advanced (collapsed)"
+msgstr "Zaawansowane (zwinięte)"
+
+msgid "Notes"
+msgstr "Uwagi"
+
+msgid "Authors"
+msgstr "Autorzy"
+
+msgid "Name"
+msgstr "Imię i nazwisko"
+
+msgid "Affiliation"
+msgstr "Afiliacja"
+
+msgid "Faculty of Medicine"
+msgstr "Wydział Lekarski"
+
+msgid "Faculty of Law"
+msgstr "Wydział Prawa"
+
+msgid "Add another author"
+msgstr "Dodaj kolejnego autora"
+
+msgid "Button"
+msgstr "Przycisk"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Submit"
+msgstr "Wyślij"
+
+msgid "A plain link"
+msgstr "Zwykły link"
+
+msgid "highlighted text"
+msgstr "wyróżniony tekst"
+
+msgid "Save and add another"
+msgstr "Zapisz i dodaj nowy"
+
+msgid "Save and continue editing"
+msgstr "Zapisz i kontynuuj edycję"
+
+msgid "Appearance"
+msgstr "Wygląd"
+
+msgid "Appearance (trying)"
+msgstr "Wygląd (próba)"
+
+msgid "Base"
+msgstr "Podstawowe"
+
+msgid "Header, navigation & footer"
+msgstr "Nagłówek, nawigacja i stopka"
+
+msgid "Date/time pickers & widgets"
+msgstr "Kalendarze, zegary i widżety"
+
+msgid "Documentation pages"
+msgstr "Strony dokumentacji"
+
+#, python-format
+msgid "%(value)r is not a colour."
+msgstr "%(value)r nie jest kolorem."
+
+msgid ""
+"A font family may contain letters, digits, spaces, commas, hyphens, "
+"underscores and paired quotes only."
+msgstr ""
+"Nazwa czcionki może zawierać tylko litery, cyfry, spacje, przecinki, "
+"myślniki, podkreślenia i sparowane cudzysłowy."
+
+msgid "Token overrides must be a JSON object."
+msgstr "Nadpisania kolorów muszą być obiektem JSON."
+
+#, python-format
+msgid "Unknown token %(name)s."
+msgstr "Nieznany kolor %(name)s."
+
+msgid "Seeds must look like {\"light\": {}, \"dark\": {}}."
+msgstr "Kolory bazowe muszą mieć postać {\"light\": {}, \"dark\": {}}."
+
+#, python-format
+msgid "Seeds for %(mode)s must be an object."
+msgstr "Kolory bazowe dla %(mode)s muszą być obiektem."
+
+#, python-format
+msgid "Unknown seed %(key)s."
+msgstr "Nieznany kolor bazowy %(key)s."
+
+#, python-format
+msgid "%(mode)s/%(key)s: %(value)r is not a colour."
+msgstr "%(mode)s/%(key)s: %(value)r nie jest kolorem."
+
+msgid "Enter an https:// URL of a font stylesheet (no quotes or brackets)."
+msgstr "Podaj adres https:// arkusza czcionki (bez cudzysłowów i nawiasów)."
+
+#, python-format
+msgid "Annual report %(n)s"
+msgstr "Raport roczny %(n)s"
+
+msgid "Theme preview"
+msgstr "Podgląd motywu"
+
+msgid "Your appearance settings were saved."
+msgstr "Zapisano ustawienia wyglądu."
+
+#, python-format
+msgid "Copied from “%(name)s”"
+msgstr "Skopiowano z „%(name)s”"
+
+#, python-format
+msgid "%(name)s (copy)"
+msgstr "%(name)s (kopia)"
+
+#, python-format
+msgid "You are trying “%(name)s” for this session only."
+msgstr "Próbujesz „%(name)s” tylko w tej sesji."

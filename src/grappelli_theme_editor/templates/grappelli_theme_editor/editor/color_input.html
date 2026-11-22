@@ -1,0 +1,10 @@
+{% load i18n %}
+<span class="gte-color" data-kind="{{ kind }}" data-key="{{ key }}"{% if prop %} data-prop="{{ prop }}"{% endif %} data-mode="{{ mode }}"{% if default %} data-default="{{ default }}"{% endif %}>
+    <span class="gte-swatch-box" title="{% translate 'Not set: Grappelli default' %}">
+        <input type="color" value="#ffffff" data-role="picker" tabindex="-1" aria-hidden="true">
+    </span>
+    <input type="text" class="gte-color-text" maxlength="40" spellcheck="false" data-role="value"
+           placeholder="{% if auto %}auto{% elif default %}{{ default }}{% else %}{% translate 'default' %}{% endif %}"
+           aria-label="{{ key }} {{ prop|default:'' }} ({{ mode }})">
+    <button type="button" class="gte-reset" data-reset tabindex="-1" title="{% translate 'Reset to default' %}">↺</button>
+</span>

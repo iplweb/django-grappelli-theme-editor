@@ -1,0 +1,59 @@
+{
+  "name": "Ocean",
+  "description": "Teal accents, a deep blue bar and soft, rounded shapes.",
+  "seeds": {
+    "light": {
+      "accent": "#1f7a8c",
+      "chrome": "#0b2e3a",
+      "background": "#f7fafb"
+    },
+    "dark": {
+      "chrome": "#0b2430",
+      "background": "#0f1a20"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "buttons": {
+      "radius": 6,
+      "shadow": "subtle"
+    },
+    "inputs": {
+      "radius": 5,
+      "focus": "ring"
+    },
+    "modules": {
+      "radius": 6,
+      "group_radius": 8,
+      "header_text_shadow": "none"
+    },
+    "filters": {
+      "radius": 6,
+      "open_shadow": "medium"
+    },
+    "messages": {
+      "radius": 6,
+      "style": "accent",
+      "weight": "normal"
+    },
+    "object_tools": {
+      "opacity": "full",
+      "radius": 6
+    },
+    "navbar": {
+      "shadow": "soft"
+    },
+    "tables": {
+      "radius": 6
+    },
+    "breadcrumbs": {
+      "link": {
+        "light": "#17606e"
+      }
+    }
+  },
+  "radius_scale": "1.5",
+  "format": "grappelli-theme-editor/1"
+}

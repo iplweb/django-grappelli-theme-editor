@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uvx ruff format --check src tests scripts example_project
+      - run: uvx ruff check src tests scripts example_project
+
+  test:
+    name: py${{ matrix.python }} / Django ${{ matrix.django }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { python: "3.11", django: "5.2" }
+          - { python: "3.12", django: "5.2" }
+          - { python: "3.12", django: "6.0" }
+          - { python: "3.13", django: "6.0" }
+          - { python: "3.14", django: "6.0" }
+    env:
+      GTE_TEST_SQLITE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync
+      - run: uv pip install "django~=${{ matrix.django }}.0"
+      - run: uv run --no-sync python -c "import django; print(django.get_version())"
+      - run: uv run --no-sync pytest
+
+  postgres:
+    name: Postgres (testcontainers)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.14"
+      - run: uv sync
+      - run: uv run pytest
+
+  browser:
+    name: Browser tests (Playwright)
+    runs-on: ubuntu-latest
+    env:
+      GTE_TEST_SQLITE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.14"
+      - run: uv sync
+      - run: uv run playwright install --with-deps chromium
+      - run: uv run pytest -m playwright
+
+  translations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y gettext
+      - name: Every catalog compiles and has a committed .mo
+        run: |
+          cd src/grappelli_theme_editor
+          for po in locale/*/LC_MESSAGES/django.po; do
+            test -f "${po%.po}.mo" || { echo "::error::missing ${po%.po}.mo"; exit 1; }
+            msgfmt --check -o /dev/null "$po"
+          done
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv build
+      - run: uvx twine check --strict dist/*
+      - name: Wheel contains templates, static files, locales, presets, migrations
+        run: |
+          python - <<'PY'
+          import glob, zipfile
+          names = zipfile.ZipFile(glob.glob("dist/*.whl")[0]).namelist()
+          for needle in (
+              "templates/admin/base_site.html",
+              "static/grappelli_theme_editor/editor.js",
+              "locale/de/LC_MESSAGES/django.mo",
+              "presets/clean-slate.json",
+              "migrations/0001_initial.py",
+              "tokens_data.py",
+          ):
+              assert any(needle in n for n in names), needle
+          print("wheel OK:", len(names), "files")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

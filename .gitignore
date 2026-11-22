@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+htmlcov/
+.tox/
+coverage.xml
+*.cover
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code harness state
+.claude/
+
+# uv
+uv.lock
+
+# Dev scaffolding (AI plans/specs, contain personal paths)
+docs/superpowers/
+
+# Local
+*.log
+example_project/db.sqlite3
+
+# run-site & django-dev-helpers ephemeral dotfiles (regenerated per run,
+# may contain dev tokens/credentials — keep them out of git).
+.run-site-config
+.dev_helpers_token
+.dev_helpers_port
+.dev_helpers_pg_*
+.dev_helpers_redis_*
+tests/_media/

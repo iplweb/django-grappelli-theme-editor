@@ -1,0 +1,40 @@
+{
+  "name": "Midnight",
+  "description": "Always dark: deep blue-grey surfaces with periwinkle accents.",
+  "color_scheme": "dark",
+  "seeds": {
+    "dark": {
+      "accent": "#7aa2f7",
+      "background": "#1a1b26",
+      "text": "#c0caf5",
+      "chrome": "#16161e",
+      "danger": "#f7768e",
+      "success": "#2d4a32",
+      "warning": "#4a3f1f"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "buttons": {
+      "radius": 6
+    },
+    "modules": {
+      "radius": 6,
+      "header_text_shadow": "none"
+    },
+    "inputs": {
+      "radius": 5,
+      "inner_shadow": "none",
+      "focus": "ring"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none"
+    },
+    "tables": {
+      "radius": 6
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

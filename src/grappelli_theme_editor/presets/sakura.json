@@ -1,0 +1,89 @@
+{
+  "name": "Sakura",
+  "description": "Soft pastel pinks, round shapes and the friendly Nunito typeface.",
+  "font_sans": "Nunito, 'Trebuchet MS', sans-serif",
+  "font_scale": "1.08",
+  "seeds": {
+    "light": {
+      "accent": "#b0306a",
+      "background": "#fff7fa",
+      "text": "#4a2c3a",
+      "chrome": "#5b2a43"
+    },
+    "dark": {
+      "accent": "#f48fb1",
+      "background": "#1f1418",
+      "text": "#f3dde6",
+      "chrome": "#2b1820"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "navbar": {
+      "link": {
+        "light": "#ffc1dc",
+        "dark": "#ffc1dc"
+      },
+      "shadow": "soft"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "light": "#9c275c"
+      }
+    },
+    "buttons": {
+      "radius": 20,
+      "padding_x": 16,
+      "shadow": "subtle",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 14,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal"
+    },
+    "modules": {
+      "radius": 16,
+      "group_radius": 18,
+      "shadow": "soft",
+      "header_text_shadow": "none"
+    },
+    "filters": {
+      "radius": 14,
+      "open_shadow": "medium"
+    },
+    "tables": {
+      "radius": 14,
+      "grid": "rows"
+    },
+    "messages": {
+      "radius": 14,
+      "weight": "normal"
+    },
+    "object_tools": {
+      "opacity": "full",
+      "shadow": "subtle"
+    },
+    "footer": {
+      "item_radius": 20
+    },
+    "popups": {
+      "radius": 14
+    },
+    "login": {
+      "radius": 24,
+      "shadow": "floating"
+    },
+    "icons": {
+      "add_icon": "custom",
+      "add_glyph": "🌸",
+      "submit_style": "icon_text",
+      "save_glyph": "🌸"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

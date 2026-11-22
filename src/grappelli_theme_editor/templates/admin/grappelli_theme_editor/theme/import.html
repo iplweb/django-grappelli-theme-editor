@@ -1,0 +1,25 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block breadcrumbs %}
+    <ul>
+        <li><a href="{% url 'admin:index' %}">{% translate "Home" %}</a></li>
+        <li><a href="{% url 'admin:grappelli_theme_editor_theme_changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a></li>
+        <li>{{ title }}</li>
+    </ul>
+{% endblock %}
+{% block content %}
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {% if form.non_field_errors %}<p class="errornote">{{ form.non_field_errors|join:" " }}</p>{% endif %}
+        <fieldset class="grp-module">
+            <div class="grp-row{% if form.file.errors %} grp-errors{% endif %}">
+                <div class="l-2c-fluid l-d-4">
+                    <div class="c-1">{{ form.file.label_tag }}</div>
+                    <div class="c-2">{{ form.file }}{{ form.file.errors }}<p class="grp-help">{{ form.file.help_text }}</p></div>
+                </div>
+            </div>
+        </fieldset>
+        <footer class="grp-module grp-submit-row grp-fixed-footer">
+            <ul><li><input type="submit" class="grp-button grp-default" value="{% translate 'Import' %}"></li></ul>
+        </footer>
+    </form>
+{% endblock %}

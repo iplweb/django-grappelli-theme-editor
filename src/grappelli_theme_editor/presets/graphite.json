@@ -1,0 +1,109 @@
+{
+  "name": "Graphite",
+  "description": "Modern and flat: indigo accent, roomy bar, lines instead of grids.",
+  "seeds": {
+    "light": {
+      "accent": "#4f5bd5",
+      "chrome": "#1f2328",
+      "background": "#f6f7f9",
+      "text": "#24292f"
+    },
+    "dark": {
+      "chrome": "#161b22",
+      "background": "#0d1117",
+      "text": "#c9d1d9"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "hover"
+    },
+    "navbar": {
+      "padding_y": 14,
+      "title_size": 15,
+      "shadow": "subtle",
+      "transform": "none",
+      "link": {
+        "light": "#a9b1ff",
+        "dark": "#a9b1ff"
+      }
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "padding_y": 8,
+      "link": {
+        "light": "#3d47b8",
+        "dark": "#a9b1ff"
+      }
+    },
+    "buttons": {
+      "radius": 8,
+      "height": 32,
+      "padding_x": 14,
+      "weight": "600",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 6,
+      "height": 30,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal",
+      "padding_x": 8
+    },
+    "modules": {
+      "radius": 8,
+      "group_radius": 10,
+      "shadow": "subtle",
+      "header_transform": "uppercase",
+      "header_text_shadow": "none",
+      "header_size": 11,
+      "spacing": 12
+    },
+    "filters": {
+      "radius": 8,
+      "open_shadow": "strong",
+      "search_radius": 8
+    },
+    "tables": {
+      "radius": 8,
+      "grid": "rows",
+      "stripes": "off",
+      "header_transform": "uppercase",
+      "cell_padding_y": 8,
+      "row_hover": {
+        "light": "#eef0fb",
+        "dark": "#1c2333"
+      }
+    },
+    "messages": {
+      "radius": 8,
+      "style": "accent",
+      "weight": "normal"
+    },
+    "object_tools": {
+      "radius": 8,
+      "opacity": "full"
+    },
+    "footer": {
+      "shadow": "soft",
+      "item_frame": "off"
+    },
+    "popups": {
+      "radius": 8,
+      "shadow": "strong"
+    },
+    "pagination": {
+      "radius": 6,
+      "gap": 3
+    },
+    "login": {
+      "radius": 12,
+      "shadow": "floating"
+    }
+  },
+  "font_sans": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+  "font_scale": "1.05",
+  "format": "grappelli-theme-editor/1"
+}

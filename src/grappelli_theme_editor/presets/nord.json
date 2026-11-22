@@ -1,0 +1,69 @@
+{
+  "name": "Nord",
+  "description": "The arctic Nord palette: frosty blues on snow, polar night in dark mode.",
+  "seeds": {
+    "light": {
+      "accent": "#4c6a8f",
+      "background": "#eceff4",
+      "text": "#2e3440",
+      "chrome": "#2e3440",
+      "danger": "#bf616a",
+      "success": "#d6e8cf",
+      "warning": "#f3e6c4"
+    },
+    "dark": {
+      "accent": "#88c0d0",
+      "background": "#2e3440",
+      "text": "#d8dee9",
+      "chrome": "#242933",
+      "danger": "#d08770"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "navbar": {
+      "link": {
+        "light": "#88c0d0",
+        "dark": "#88c0d0"
+      }
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "light": "#3b5778"
+      }
+    },
+    "buttons": {
+      "radius": 6,
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 6,
+      "inner_shadow": "none",
+      "focus": "ring"
+    },
+    "modules": {
+      "radius": 8,
+      "group_radius": 8,
+      "header_text_shadow": "none"
+    },
+    "filters": {
+      "radius": 8,
+      "open_shadow": "medium"
+    },
+    "tables": {
+      "radius": 8
+    },
+    "messages": {
+      "radius": 6,
+      "weight": "normal"
+    },
+    "object_tools": {
+      "radius": 6,
+      "opacity": "full"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

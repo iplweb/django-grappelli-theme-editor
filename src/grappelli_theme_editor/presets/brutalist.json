@@ -1,0 +1,116 @@
+{
+  "name": "Brutalist",
+  "description": "Black outlines, hard offset shadows, square everything, shouting headers.",
+  "font_sans": "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
+  "font_scale": "1.0",
+  "radius_scale": "0",
+  "seeds": {
+    "light": {
+      "accent": "#0000ee",
+      "background": "#fffef5",
+      "text": "#000000",
+      "chrome": "#000000",
+      "warning": "#fff176",
+      "success": "#b9f6ca"
+    },
+    "dark": {
+      "accent": "#8ab4ff",
+      "background": "#111111",
+      "text": "#ffffff",
+      "chrome": "#000000"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "always"
+    },
+    "navbar": {
+      "padding_y": 14,
+      "title_size": 18,
+      "transform": "uppercase",
+      "border": 4,
+      "border_color": {
+        "light": "#ffeb3b",
+        "dark": "#ffeb3b"
+      },
+      "link": {
+        "light": "#ffeb3b",
+        "dark": "#ffeb3b"
+      },
+      "link_hover": {
+        "light": "#ffffff",
+        "dark": "#ffffff"
+      }
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "padding_y": 8
+    },
+    "buttons": {
+      "radius": 0,
+      "border": 3,
+      "shadow": "hard",
+      "transform": "uppercase",
+      "border_color": {
+        "light": "#000000",
+        "dark": "#ffffff"
+      },
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 0,
+      "border": 2,
+      "inner_shadow": "none",
+      "focus": "ring"
+    },
+    "modules": {
+      "radius": 0,
+      "group_radius": 0,
+      "border": 3,
+      "shadow": "hard",
+      "spacing": 18,
+      "header_transform": "uppercase",
+      "header_text_shadow": "none"
+    },
+    "filters": {
+      "radius": 0,
+      "border": 3,
+      "open_shadow": "hard",
+      "search_radius": 0
+    },
+    "tables": {
+      "radius": 0,
+      "header_transform": "uppercase",
+      "header_surface": "flat"
+    },
+    "messages": {
+      "radius": 0,
+      "style": "accent",
+      "shadow": "hard"
+    },
+    "object_tools": {
+      "radius": 0,
+      "opacity": "full",
+      "shadow": "hard",
+      "transform": "uppercase"
+    },
+    "footer": {
+      "surface": "flat",
+      "item_radius": 0
+    },
+    "pagination": {
+      "radius": 0,
+      "gap": 4
+    },
+    "login": {
+      "radius": 0,
+      "shadow": "hard"
+    },
+    "popups": {
+      "radius": 0,
+      "shadow": "hard"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

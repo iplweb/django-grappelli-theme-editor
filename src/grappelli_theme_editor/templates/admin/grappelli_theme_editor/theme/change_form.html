@@ -1,0 +1,172 @@
+{% extends "admin/change_form.html" %}
+{% load i18n static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'grappelli_theme_editor/editor.css' %}?v={{ gte_asset_version }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    {{ gte_i18n|json_script:"gte-i18n" }}
+    {{ gte_sources|json_script:"gte-sources" }}
+    {{ gte_prop_types|json_script:"gte-prop-types" }}
+    {{ gte_font_picker|json_script:"gte-font-picker" }}
+    <script src="{% static 'grappelli_theme_editor/editor.js' %}?v={{ gte_asset_version }}" defer></script>
+{% endblock %}
+
+{# grappelli.cleanInputTypes() turns color/range/number inputs into text inputs; the editor needs them. #}
+{% block js_clean_input_types %}{% endblock %}
+
+{% block object-tools-items %}
+    {% if original and not revert and not recover %}
+        {% if original.is_site_default %}
+            <li><span class="gte-default-badge">★ {% translate "Site default" %}</span></li>
+        {% elif gte_privileged and original.is_shared %}
+            <li><form method="post" action="{% url 'admin:grappelli_theme_editor_theme_make_default' original.pk %}" class="gte-tool-form">{% csrf_token %}<button type="submit" class="gte-tool">☆ {% translate "Make site default" %}</button></form></li>
+        {% endif %}
+        {% if gte_trying == original.pk %}
+            <li><form method="post" action="{% url 'grappelli_theme_editor:stop-trying' %}" class="gte-tool-form">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><button type="submit" class="gte-tool gte-tool-on">👁 {% translate "Stop trying" %}</button></form></li>
+        {% else %}
+            <li><form method="post" action="{% url 'grappelli_theme_editor:try' original.pk %}" class="gte-tool-form" title="{% translate 'Use the saved version of this theme in this browser session only' %}">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><button type="submit" class="gte-tool">👁 {% translate "Try for this session" %}</button></form></li>
+        {% endif %}
+        <li><a href="{% url 'admin:grappelli_theme_editor_theme_export' original.pk %}">{% translate "Export" %}</a></li>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
+
+{% block form_top %}
+    {% if revert %}
+        <p class="gte-revert-note">↺ {% translate "This is an older version of the theme, shown in the live preview. Press Save to restore it." %}</p>
+    {% elif recover %}
+        <p class="gte-revert-note">↺ {% translate "This is a deleted theme. Press Save to recover it." %}</p>
+    {% endif %}
+{% endblock %}
+
+{% block field_sets %}
+{{ block.super }}
+{% if add or has_change_permission %}
+<div class="gte-editor" id="gte-editor"
+     data-preview-url="{{ gte_preview_url }}"
+     data-preview-css-url="{{ gte_preview_css_url }}{% if original and not recover %}?theme={{ original.pk }}{% endif %}">
+    <div class="gte-controls">
+        <div class="grp-module gte-panel">
+            <div class="gte-tabs" role="tablist">
+                <button type="button" role="tab" class="gte-tab gte-tab-active" data-tab="colors">{% translate "Colours" %}<span class="gte-changed-count" data-tab-count hidden></span></button>
+                <button type="button" role="tab" class="gte-tab" data-tab="components">{% translate "Shapes & bars" %}<span class="gte-changed-count" data-tab-count hidden></span></button>
+                <button type="button" role="tab" class="gte-tab" data-tab="icons">{% translate "Icons" %}<span class="gte-changed-count" data-tab-count hidden></span></button>
+                <button type="button" role="tab" class="gte-tab" data-tab="typography">{% translate "Typography" %}<span class="gte-changed-count" data-tab-count hidden></span></button>
+                <button type="button" role="tab" class="gte-tab" data-tab="tokens">{% translate "All colour tokens" %}<span class="gte-changed-count" data-tab-count hidden></span></button>
+                <button type="button" role="tab" class="gte-tab gte-tab-secondary" data-tab="load">{% translate "Load from…" %}</button>
+            </div>
+
+            {# Simple mode: seed colours #}
+            <section class="gte-tab-panel" data-panel="colors">
+                <p class="gte-hint">{% translate "Pick a few base colours; every other colour of the admin is derived from them. Empty = Grappelli's colour. Dark mode follows the light accent colours automatically unless you set them." %}</p>
+                <table class="gte-grid">
+                    <thead><tr><th></th><th>{% translate "Light mode" %}</th><th>{% translate "Dark mode" %}</th></tr></thead>
+                    <tbody>
+                    {% for seed in gte_seeds %}
+                        <tr data-seed-row="{{ seed.key }}">
+                            <th scope="row">{{ seed.label }}</th>
+                            <td>{% include "grappelli_theme_editor/editor/color_input.html" with kind="seed" key=seed.key mode="light" default=seed.light %}</td>
+                            <td>{% include "grappelli_theme_editor/editor/color_input.html" with kind="seed" key=seed.key mode="dark" default=seed.dark auto=seed.derive_dark %}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+
+            {# Components: shapes, shadows, bars #}
+            <section class="gte-tab-panel" data-panel="components" hidden>
+                {% include "grappelli_theme_editor/editor/expand_all.html" %}
+                {% for comp in gte_components %}{% if comp.key != "icons" %}
+                    {% include "grappelli_theme_editor/editor/component.html" %}
+                {% endif %}                {% endfor %}
+            </section>
+
+            {# Icons & labels #}
+            <section class="gte-tab-panel" data-panel="icons" hidden>
+                {% for comp in gte_components %}{% if comp.key == "icons" %}
+                    {% include "grappelli_theme_editor/editor/component.html" with icons_tab=True %}
+                {% endif %}{% endfor %}
+            </section>
+
+            {# Fonts & global scales: the model fields are moved here by editor.js #}
+            <section class="gte-tab-panel" data-panel="typography" hidden>
+                <p class="gte-hint">{% blocktranslate %}Use “Choose…” next to a field to pick a font, or type any CSS font-family. Uploaded fonts and web fonts added under <a href="{{ gte_fonts_url }}">Fonts</a> appear in the menu too.{% endblocktranslate %}</p>
+                <div data-typography-slot></div>
+                <p class="gte-webfont-warning" data-webfont-warning hidden></p>
+            </section>
+
+            {# Advanced: every --grp-* token #}
+            <section class="gte-tab-panel" data-panel="tokens" hidden>
+                <p class="gte-hint">{% translate "Override single colours. Placeholders show the value currently in effect (Grappelli's default or derived from the base colours)." %}</p>
+                <input type="search" class="gte-filter vTextField" placeholder="{% translate 'Filter tokens…' %}" data-token-filter>
+                {% include "grappelli_theme_editor/editor/expand_all.html" %}
+                {% for key, label, tokens in gte_token_groups %}
+                    <details class="gte-token-group gte-section" data-section="tokens:{{ key }}"{% if forloop.counter <= 2 %} open{% endif %}>
+                        <summary>{{ label }} <span class="gte-count">({{ tokens|length }})</span><span class="gte-changed-count" data-changed-count hidden></span></summary>
+                        <table class="gte-grid">
+                            <thead><tr><th></th><th>{% translate "Light mode" %}</th><th>{% translate "Dark mode" %}</th></tr></thead>
+                            <tbody>
+                            {% for token in tokens %}
+                                <tr data-token-row="{{ token.name }}" data-family-light="{{ token.family_light }}" data-family-dark="{{ token.family_dark }}">
+                                    <th scope="row" title="{{ token.name }}">{{ token.label }}</th>
+                                    <td>{% include "grappelli_theme_editor/editor/color_input.html" with kind="token" key=token.name mode="light" default=token.light %}</td>
+                                    <td>{% include "grappelli_theme_editor/editor/color_input.html" with kind="token" key=token.name mode="dark" default=token.dark %}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </details>
+                {% endfor %}
+            </section>
+            {# Load parts from another theme #}
+            <section class="gte-tab-panel" data-panel="load" hidden>
+                {% if gte_sources %}
+                <div class="gte-take" data-take>
+                    <p class="gte-hint">{% translate "Copy one part of another theme into this one — the rest stays as it is. Nothing is saved until you press Save." %}</p>
+                    <div class="gte-take-body">
+                        <label for="gte-take-source">{% translate "Take from" %}</label>
+                        <select id="gte-take-source" data-take-source>
+                            {% for src in gte_sources %}<option value="{{ src.pk }}">{{ src.name }}</option>{% endfor %}
+                        </select>
+                        <button type="button" class="gte-take-button" data-take-part="colors">{% translate "colours" %}</button>
+                        <button type="button" class="gte-take-button" data-take-part="shapes">{% translate "shapes & bars" %}</button>
+                        <button type="button" class="gte-take-button" data-take-part="fonts">{% translate "fonts & sizes" %}</button>
+                    </div>
+                    <p class="gte-take-status" data-take-status aria-live="polite"></p>
+                </div>
+                {% else %}
+                <p class="gte-hint">{% translate "There are no other themes to load from yet." %}</p>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+
+    <aside class="gte-preview" aria-label="{% translate 'Live preview' %}">
+        <div class="gte-preview-toolbar">
+            <strong>{% translate "Live preview" %}</strong>
+            <span class="gte-mode-switch" role="group">
+                <button type="button" data-preview-mode="light" class="gte-active">{% translate "Light" %}</button>
+                <button type="button" data-preview-mode="dark">{% translate "Dark" %}</button>
+            </span>
+            <button type="button" class="gte-inspect-toggle gte-active" data-inspect-toggle aria-pressed="true" title="{% translate 'Click an element in the preview to see where its look can be changed. Turn off to use links and filters in the preview.' %}">🎯 {% translate "Inspect" %}</button>
+            <span class="gte-status" data-status aria-live="polite"></span>
+        </div>
+        <ul class="gte-warnings" data-warnings hidden></ul>
+        <div class="gte-inspector" data-inspector hidden>
+            <div class="gte-inspector-head">
+                <span>{% translate "Selected" %}: <code data-inspected-name></code></span>
+                <button type="button" class="gte-inspector-close" data-inspector-close title="{% translate 'Clear selection' %}">✕</button>
+            </div>
+            <div class="gte-inspector-body" data-inspector-body></div>
+        </div>
+        <iframe class="gte-frame" title="{% translate 'Live preview' %}" src="{{ gte_preview_url }}"></iframe>
+    </aside>
+</div>
+{% else %}
+<p class="gte-hint">{% url 'grappelli_theme_editor:my-theme' as me_url %}{% blocktranslate %}This is a shared theme. To change it for yourself, use “Customise a copy” on the <a href="{{ me_url }}">Appearance</a> page.{% endblocktranslate %}</p>
+{% endif %}
+{% endblock %}

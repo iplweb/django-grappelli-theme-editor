@@ -1,0 +1,6 @@
+{% extends "admin/base_site.html" %}
+{% load grappelli_theme_editor %}
+{# Extends the next admin/base_site.html in the loader chain (Grappelli's or the project's). #}
+{# Requires grappelli_theme_editor to be listed BEFORE grappelli in INSTALLED_APPS. #}
+{% block extrastyle %}{{ block.super }}{% grappelli_theme_stylesheet %}{% endblock %}
+{% block userlinks %}{{ block.super }}{% grappelli_theme_user_link %}{% endblock %}

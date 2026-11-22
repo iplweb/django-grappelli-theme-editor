@@ -1,0 +1,206 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{# Component catalogue shown in the theme editor's preview frame. #}
+{# The editor injects the CSS of the unsaved theme, so no theme is loaded here. #}
+{% block javascripts %}
+    {{ block.super }}
+    <script src="{% url 'admin:jsi18n' %}"></script>
+    <script>
+        (function($) {
+            $(function() {
+                grappelli.initFilter(true);
+                $("#grp-content-container .grp-collapse").grp_collapsible();
+                grappelli.initDateAndTimePicker();
+            });
+        })(grp.jQuery);
+    </script>
+{% endblock %}
+{% block bodyclass %}grp-change-list grp-change-form gte-preview-page{% endblock %}
+{% block breadcrumbs %}
+    <ul>
+        <li><a href="#">{% translate "Home" %}</a></li>
+        <li><a href="#">{% translate "Bibliography" %}</a></li>
+        <li>{{ title }}</li>
+    </ul>
+{% endblock %}
+{% block object-tools %}
+    <ul class="grp-object-tools">
+        <li><a href="#" class="grp-add-link grp-state-focus">{% translate "Add report" %}</a></li>
+        <li><a href="#">{% translate "History" %}</a></li>
+    </ul>
+{% endblock %}
+{% block messages %}
+    <ul class="grp-messagelist">
+        <li class="grp-info">{% translate "Information: this is a preview of your theme." %}</li>
+        <li class="grp-success">{% translate "The report was added successfully." %}</li>
+        <li class="grp-warning">{% translate "Some fields are still empty." %}</li>
+        <li class="grp-error">{% translate "The report could not be deleted." %}</li>
+    </ul>
+{% endblock %}
+{% block content %}
+    {# Change list: search, filter, pagination, results table #}
+    <div class="grp-module">
+        <div class="grp-row">
+            <div class="l-2cr-fluid l-d-12">
+                <aside class="c-1">
+                    <div id="search" class="g-d-6 g-d-f">
+                        <form id="grp-changelist-search-form" action="" method="get" onsubmit="return false">
+                            <input type="text" id="grp-changelist-search" class="grp-search-field" value="">
+                            <button type="submit" class="grp-search-button"></button>
+                        </form>
+                    </div>
+                    <div id="grp-filters" class="g-d-6 g-d-l">
+                        <div class="grp-filter">
+                            <div class="grp-pulldown-container">
+                                <a href="javascript://" class="grp-button grp-pulldown-handler">{% translate "Filter" %}</a>
+                                <div class="grp-pulldown-content" style="display: none;">
+                                    <div class="grp-module">
+                                        <div class="grp-row">
+                                            <label>{% translate "By year" %}</label>
+                                            <select class="grp-filter-choice"><option>{% translate "All" %}</option><option>2025</option><option>2026</option></select>
+                                        </div>
+                                    </div>
+                                    <div class="grp-module">
+                                        <div class="grp-row">
+                                            <label>{% translate "By status" %}</label>
+                                            <select class="grp-filter-choice"><option>{% translate "All" %}</option><option>{% translate "Draft" %}</option></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="c-2">
+                    <nav class="grp-pagination">
+                        <ul>
+                            <li class="grp-results"><span>42 {% translate "results" %}</span></li>
+                            <li><a href="#" aria-current="page">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="grp-separator"><span>…</span></li>
+                            <li><a href="#">9</a></li>
+                            <li class="grp-showall"><a href="#">{% translate "Show all" %}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="grp-changelist">
+        <div class="grp-module grp-changelist-results">
+            <table id="result_list" class="grp-table grp-sortable">
+                <thead>
+                    <tr>
+                        <th scope="col" class="action-checkbox-column"><div class="text"><span><input type="checkbox" aria-label="select all"></span></div></th>
+                        <th scope="col" class="sortable sorted ascending"><div class="text"><a href="#">{% translate "Title" %}</a></div></th>
+                        <th scope="col" class="sortable"><div class="text"><a href="#">{% translate "Year" %}</a></div></th>
+                        <th scope="col"><div class="text"><span>{% translate "Published" %}</span></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                        <tr class="grp-row grp-row-{% cycle 'odd' 'even' %}{% if forloop.counter == 2 %} grp-selected{% endif %}">
+                            <td class="action-checkbox"><input type="checkbox" aria-label="select"{% if forloop.counter == 2 %} checked{% endif %}></td>
+                            <th><a href="#">{{ row.title }}</a></th>
+                            <td>{{ row.n|add:2019 }}</td>
+                            <td><img src="{{ STATIC_URL|default:'/static/' }}admin/img/icon-{% if row.n|divisibleby:2 %}yes{% else %}no{% endif %}.svg" alt=""></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    {# Change form: fieldsets, errors, help, inline #}
+    <h1 class="gte-preview-heading">{% translate "Change report" %}</h1>
+    <p class="errornote">{% translate "Please correct the error below." %}</p>
+    <fieldset class="grp-module">
+        <h2 class="grp-collapse-handler">{% translate "Basic information" %}</h2>
+        <div class="form-row grp-row">
+            <div class="field-box l-2c-fluid l-d-4">
+                <div class="c-1"><label class="required" for="gte-p-title">{% translate "Title" %}</label></div>
+                <div class="c-2"><input type="text" id="gte-p-title" class="vTextField" value="{% translate 'Annual report 2026' %}"><p class="grp-help">{% translate "Shown on the public page." %}</p></div>
+            </div>
+        </div>
+        <div class="form-row grp-row grp-errors">
+            <div class="field-box l-2c-fluid l-d-4">
+                <div class="c-1"><label class="required" for="gte-p-isbn">ISBN</label></div>
+                <div class="c-2"><input type="text" id="gte-p-isbn" class="vTextField" value="978-0"><ul class="errorlist"><li>{% translate "Enter a valid ISBN." %}</li></ul></div>
+            </div>
+        </div>
+        <div class="form-row grp-row grp-cells-2 grp-cells">
+            <div class="field-box grp-cell l-2c-fluid l-d-4">
+                <div class="c-1"><label for="gte-p-date">{% translate "Date" %}</label></div>
+                <div class="c-2"><input type="text" id="gte-p-date" class="vDateField" value="2026-11-22"></div>
+            </div>
+            <div class="field-box grp-cell l-2c-fluid l-d-4">
+                <div class="c-1"><label for="gte-p-kind">{% translate "Kind" %}</label></div>
+                <div class="c-2"><select id="gte-p-kind"><option>{% translate "Article" %}</option><option>{% translate "Book" %}</option></select></div>
+            </div>
+        </div>
+        <div class="form-row grp-row">
+            <div class="field-box l-2c-fluid l-d-4">
+                <div class="c-1"><label for="gte-p-abstract">{% translate "Abstract" %}</label></div>
+                <div class="c-2"><textarea id="gte-p-abstract" class="vLargeTextField" rows="3">Lorem ipsum dolor sit amet.</textarea></div>
+            </div>
+        </div>
+        <div class="form-row grp-row">
+            <div class="field-box l-2c-fluid l-d-4">
+                <div class="c-1">&nbsp;</div>
+                <div class="c-2"><input type="checkbox" id="gte-p-pub" checked><label class="vCheckboxLabel" for="gte-p-pub">{% translate "Published" %}</label></div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="grp-module grp-collapse grp-closed">
+        <h2 class="grp-collapse-handler">{% translate "Advanced (collapsed)" %}</h2>
+        <div class="form-row grp-row"><div class="field-box l-2c-fluid l-d-4"><div class="c-1"><label>{% translate "Notes" %}</label></div><div class="c-2"><input type="text" class="vTextField"></div></div></div>
+    </fieldset>
+
+    <div class="grp-group grp-tabular">
+        <h2 class="grp-collapse-handler">{% translate "Authors" %}</h2>
+        <div class="grp-module grp-table">
+            <div class="grp-module grp-thead">
+                <div class="grp-tr">
+                    <div class="grp-th">{% translate "Name" %}</div>
+                    <div class="grp-th">{% translate "Affiliation" %}</div>
+                    <div class="grp-th"></div>
+                </div>
+            </div>
+            <div class="grp-module grp-tbody">
+                <div class="grp-tr">
+                    <div class="grp-td"><input type="text" value="Anna Kowalska"></div>
+                    <div class="grp-td"><input type="text" value="{% translate 'Faculty of Medicine' %}"></div>
+                    <div class="grp-td grp-tools-container"><ul class="grp-tools"><li><a href="#" class="grp-icon grp-delete-handler" title="Delete"></a></li></ul></div>
+                </div>
+            </div>
+            <div class="grp-module grp-tbody grp-predelete">
+                <div class="grp-tr">
+                    <div class="grp-td"><input type="text" value="Jan Nowak"></div>
+                    <div class="grp-td"><input type="text" value="{% translate 'Faculty of Law' %}"></div>
+                    <div class="grp-td grp-tools-container"><ul class="grp-tools"><li><a href="#" class="grp-icon grp-delete-handler" title="Delete"></a></li></ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="grp-module grp-transparent grp-add-item"><a href="#" class="grp-add-handler">{% translate "Add another author" %}</a></div>
+    </div>
+
+    <p class="gte-preview-buttons">
+        <a href="#" class="grp-button">{% translate "Button" %}</a>
+        <a href="#" class="grp-button grp-delete-link">{% translate "Delete" %}</a>
+        <a href="#" class="grp-button grp-cancel-link">{% translate "Cancel" %}</a>
+        <input type="submit" value="{% translate 'Submit' %}" onclick="return false">
+        <a href="#">{% translate "A plain link" %}</a>
+        <mark>{% translate "highlighted text" %}</mark>
+    </p>
+
+    <footer class="grp-module grp-submit-row grp-fixed-footer">
+        <header style="display:none"><h1>Submit Options</h1></header>
+        <ul>
+            <li class="grp-float-left"><a href="#" class="grp-button grp-delete-link">{% translate "Delete" %}</a></li>
+            <li><input type="submit" name="_save" value="{% translate 'Save' %}" class="grp-button grp-default" onclick="return false"></li>
+            <li><input type="submit" name="_addanother" value="{% translate 'Save and add another' %}" class="grp-button" onclick="return false"></li>
+            <li><input type="submit" name="_continue" value="{% translate 'Save and continue editing' %}" class="grp-button" onclick="return false"></li>
+        </ul>
+    </footer>
+{% endblock %}
