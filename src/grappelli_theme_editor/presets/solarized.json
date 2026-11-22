@@ -1,0 +1,69 @@
+{
+  "name": "Solarized",
+  "description": "Ethan Schoonover's Solarized palette: base3 paper by day, base03 by night, blue accent.",
+  "seeds": {
+    "light": {
+      "accent": "#1f6fae",
+      "background": "#fdf6e3",
+      "text": "#2b3d44",
+      "chrome": "#073642",
+      "danger": "#c2302b"
+    },
+    "dark": {
+      "accent": "#4fa3e0",
+      "background": "#002b36",
+      "text": "#b8c4c4",
+      "chrome": "#073642",
+      "danger": "#e0605a",
+      "success": "#14361f",
+      "warning": "#3a3208"
+    }
+  },
+  "font_mono": "'JetBrains Mono', ui-monospace, monospace",
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "navbar": {
+      "link": {
+        "light": "#7fc4f0",
+        "dark": "#7fc4f0"
+      }
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "light": "#1c6399"
+      }
+    },
+    "buttons": {
+      "radius": 6,
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 6,
+      "inner_shadow": "none",
+      "focus": "ring"
+    },
+    "modules": {
+      "radius": 8,
+      "header_text_shadow": "none"
+    },
+    "tables": {
+      "radius": 8,
+      "empty_pattern": "dots",
+      "empty_color": {
+        "light": "#eee8d5",
+        "dark": "#073642"
+      }
+    },
+    "messages": {
+      "radius": 6,
+      "weight": "normal"
+    },
+    "object_tools": {
+      "opacity": "full"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

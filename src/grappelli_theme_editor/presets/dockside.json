@@ -1,0 +1,170 @@
+{
+  "name": "Dockside",
+  "description": "macOS-like: light grey bar, blue accent, big radii, soft shadows and a centred dock with icon buttons.",
+  "color_scheme": "light",
+  "font_sans": "system-ui, -apple-system, 'SF Pro Text', 'Helvetica Neue', Inter, sans-serif",
+  "font_scale": "1.05",
+  "spacing_scale": "1.1",
+  "seeds": {
+    "light": {
+      "accent": "#0a62e8",
+      "background": "#f5f5f7",
+      "text": "#1d1d1f",
+      "chrome": "#3a3a3c"
+    },
+    "dark": {}
+  },
+  "light_tokens": {
+    "--grp-dark-border-shade-color": "#d2d2d7",
+    "--grp-dark-border-highlight-color": "#ffffff",
+    "--grp-module-background-color": "#ffffff",
+    "--grp-group-background-color": "#ffffff",
+    "--grp-table-row-background-color": "#ffffff",
+    "--grp-table-row-background-color-alt": "#ffffff",
+    "--grp-table-background-color": "#fafafa",
+    "--grp-table-background-color-shade": "#fafafa",
+    "--grp-module-border-color": "#e5e5ea",
+    "--grp-group-border-color": "#e5e5ea",
+    "--grp-table-border-color": "#e5e5ea",
+    "--grp-table-cell-border-color": "#efeff4",
+    "--grp-row-border-bottom-color": "#efeff4",
+    "--grp-row-border-top-color": "#ffffff",
+    "--grp-module-h2-gradient-from": "#fafafa",
+    "--grp-module-h2-gradient-to": "#fafafa",
+    "--grp-module-h3-gradient-from": "#fafafa",
+    "--grp-module-h3-gradient-to": "#fafafa",
+    "--grp-module-h3-collapse-handler-gradient-from": "#eef4ff",
+    "--grp-module-h3-collapse-handler-gradient-to": "#eef4ff",
+    "--grp-module-h2-collapse-handler-gradient-from": "#e8f0fe",
+    "--grp-module-h2-collapse-handler-gradient-to": "#e8f0fe",
+    "--grp-form-field-background-color": "#ffffff",
+    "--grp-form-field-border-color": "#d2d2d7",
+    "--grp-pagination-background-color": "#ffffff",
+    "--grp-pagination-background-color-shade": "#ffffff",
+    "--grp-context-navigation-background-color": "#f5f5f7"
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "hover"
+    },
+    "buttons": {
+      "radius": 8,
+      "height": 30,
+      "padding_x": 14,
+      "border": 0,
+      "weight": "600",
+      "shadow": "subtle",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 7,
+      "height": 30,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal",
+      "padding_x": 9
+    },
+    "modules": {
+      "radius": 12,
+      "group_radius": 12,
+      "border": 1,
+      "shadow": "soft",
+      "spacing": 14,
+      "header_text_shadow": "none",
+      "header_surface": "flat",
+      "header_padding": 9
+    },
+    "filters": {
+      "radius": 10,
+      "open_shadow": "strong",
+      "search_radius": 8
+    },
+    "tables": {
+      "radius": 12,
+      "grid": "rows",
+      "stripes": "off",
+      "header_surface": "flat",
+      "empty_pattern": "solid"
+    },
+    "messages": {
+      "radius": 10,
+      "style": "accent",
+      "weight": "normal",
+      "shadow": "subtle"
+    },
+    "object_tools": {
+      "radius": 8,
+      "opacity": "full",
+      "shadow": "subtle"
+    },
+    "pagination": {
+      "radius": 7,
+      "gap": 4
+    },
+    "popups": {
+      "radius": 12,
+      "shadow": "strong"
+    },
+    "login": {
+      "radius": 18,
+      "shadow": "floating"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "padding_y": 8,
+      "background": {
+        "light": "#f5f5f7"
+      },
+      "link": {
+        "light": "#0a5bd6"
+      },
+      "border": {
+        "light": "#e5e5ea"
+      }
+    },
+    "navbar": {
+      "background": {
+        "light": "#ececec"
+      },
+      "text": {
+        "light": "#1d1d1f"
+      },
+      "link": {
+        "light": "#0a5bd6"
+      },
+      "link_hover": {
+        "light": "#1d1d1f"
+      },
+      "border": 1,
+      "border_color": {
+        "light": "#d2d2d7"
+      },
+      "padding_y": 13,
+      "title_size": 14,
+      "shadow": "subtle"
+    },
+    "footer": {
+      "position": "dock",
+      "surface": "flat",
+      "background": {
+        "light": "#f5f5f7"
+      },
+      "item_frame": "off",
+      "item_radius": 10,
+      "dock_offset": 40,
+      "shadow": "floating"
+    },
+    "icons": {
+      "add_icon": "line",
+      "search_icon": "line",
+      "filter_arrow": "chevron",
+      "submit_style": "icon_only",
+      "submit_icons": "dark",
+      "submit_buttons": "plain",
+      "icon_size": 24,
+      "save_line": "check"
+    }
+  },
+  "format": "grappelli-theme-editor/1"
+}

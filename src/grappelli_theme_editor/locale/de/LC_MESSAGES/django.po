@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-grappelli-theme-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-22 13:08+0100\n"
+"POT-Creation-Date: 2026-11-22 13:28+0100\n"
 "PO-Revision-Date: 2026-11-22 13:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German\n"
@@ -224,6 +224,9 @@ msgstr "Schwebend"
 msgid "Hard offset (brutalist)"
 msgstr "Harter Versatz (brutalistisch)"
 
+msgid "Floating, all around (for the dock)"
+msgstr "Schwebend, rundum (für das Dock)"
+
 msgid "Normal"
 msgstr "Normal"
 
@@ -363,6 +366,33 @@ msgstr "Linien-Icons, weiß"
 
 msgid "Outline icons, dark"
 msgstr "Linien-Icons, dunkel"
+
+msgid "Outline “Save” icon"
+msgstr "Linien-Icon „Sichern“"
+
+msgid "Check mark ✓"
+msgstr "Häkchen ✓"
+
+msgid "Cloud with arrow up"
+msgstr "Wolke mit Pfeil nach oben"
+
+msgid "Arrow into a tray"
+msgstr "Pfeil in eine Ablage"
+
+msgid "Floppy disk (retro)"
+msgstr "Diskette (retro)"
+
+msgid "Icon size"
+msgstr "Icon-Größe"
+
+msgid "Save / delete button background"
+msgstr "Hintergrund der Sichern-/Löschen-Schaltflächen"
+
+msgid "Filled (Grappelli)"
+msgstr "Gefüllt (Grappelli)"
+
+msgid "None — just the icon, like a dock"
+msgstr "Keiner — nur das Icon, wie im Dock"
 
 msgid "“Save” icon"
 msgstr "„Sichern“-Icon"
@@ -720,6 +750,9 @@ msgstr "Dock: zentriert, nur so breit wie die Schaltflächen"
 
 msgid "At the end of the form (does not float)"
 msgstr "Am Ende des Formulars (nicht schwebend)"
+
+msgid "Distance from the bottom (dock)"
+msgstr "Abstand vom unteren Rand (Dock)"
 
 msgid "Button frame rounding"
 msgstr "Rundung des Schaltflächenrahmens"

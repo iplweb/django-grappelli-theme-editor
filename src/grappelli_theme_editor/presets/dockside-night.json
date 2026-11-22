@@ -1,0 +1,168 @@
+{
+  "name": "Dockside Night",
+  "description": "The dark Dockside: graphite surfaces, sky-blue accent and the icon dock.",
+  "color_scheme": "dark",
+  "font_sans": "system-ui, -apple-system, 'SF Pro Text', 'Helvetica Neue', Inter, sans-serif",
+  "font_scale": "1.05",
+  "spacing_scale": "1.1",
+  "seeds": {
+    "light": {},
+    "dark": {
+      "accent": "#4a9eff",
+      "background": "#1c1c1e",
+      "text": "#e5e5ea",
+      "chrome": "#2c2c2e",
+      "success": "#1f3d2a",
+      "warning": "#4a3b12",
+      "danger": "#ff6961"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat",
+      "link_decoration": "hover"
+    },
+    "buttons": {
+      "radius": 8,
+      "height": 30,
+      "padding_x": 14,
+      "border": 0,
+      "weight": "600",
+      "shadow": "subtle",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 7,
+      "height": 30,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal",
+      "padding_x": 9
+    },
+    "modules": {
+      "radius": 12,
+      "group_radius": 12,
+      "border": 1,
+      "shadow": "soft",
+      "spacing": 14,
+      "header_text_shadow": "none",
+      "header_surface": "flat",
+      "header_padding": 9
+    },
+    "filters": {
+      "radius": 10,
+      "open_shadow": "strong",
+      "search_radius": 8
+    },
+    "tables": {
+      "radius": 12,
+      "grid": "rows",
+      "stripes": "off",
+      "header_surface": "flat",
+      "empty_pattern": "solid"
+    },
+    "messages": {
+      "radius": 10,
+      "style": "accent",
+      "weight": "normal",
+      "shadow": "subtle"
+    },
+    "object_tools": {
+      "radius": 8,
+      "opacity": "full",
+      "shadow": "subtle"
+    },
+    "pagination": {
+      "radius": 7,
+      "gap": 4
+    },
+    "popups": {
+      "radius": 12,
+      "shadow": "strong"
+    },
+    "login": {
+      "radius": 18,
+      "shadow": "floating"
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "padding_y": 8,
+      "background": {
+        "dark": "#1c1c1e"
+      },
+      "link": {
+        "dark": "#6cb0ff"
+      },
+      "border": {
+        "dark": "#3a3a3c"
+      }
+    },
+    "navbar": {
+      "background": {
+        "dark": "#2c2c2e"
+      },
+      "text": {
+        "dark": "#f5f5f7"
+      },
+      "link": {
+        "dark": "#6cb0ff"
+      },
+      "link_hover": {
+        "dark": "#ffffff"
+      },
+      "border": 1,
+      "border_color": {
+        "dark": "#3a3a3c"
+      },
+      "padding_y": 13,
+      "title_size": 14,
+      "shadow": "subtle"
+    },
+    "footer": {
+      "position": "dock",
+      "surface": "flat",
+      "background": {
+        "dark": "#2c2c2e"
+      },
+      "item_frame": "off",
+      "item_radius": 10,
+      "dock_offset": 40,
+      "shadow": "floating"
+    },
+    "icons": {
+      "add_icon": "line",
+      "search_icon": "line",
+      "filter_arrow": "chevron",
+      "submit_style": "icon_only",
+      "submit_icons": "white",
+      "submit_buttons": "plain",
+      "icon_size": 24,
+      "save_line": "check"
+    }
+  },
+  "format": "grappelli-theme-editor/1",
+  "dark_tokens": {
+    "--grp-module-background-color": "#2c2c2e",
+    "--grp-group-background-color": "#2c2c2e",
+    "--grp-table-row-background-color": "#2c2c2e",
+    "--grp-table-row-background-color-alt": "#2c2c2e",
+    "--grp-table-background-color": "#262628",
+    "--grp-table-background-color-shade": "#262628",
+    "--grp-module-border-color": "#3a3a3c",
+    "--grp-group-border-color": "#3a3a3c",
+    "--grp-table-border-color": "#3a3a3c",
+    "--grp-table-cell-border-color": "#38383a",
+    "--grp-row-border-bottom-color": "#38383a",
+    "--grp-row-border-top-color": "#2c2c2e",
+    "--grp-module-h2-gradient-from": "#262628",
+    "--grp-module-h2-gradient-to": "#262628",
+    "--grp-module-h3-gradient-from": "#262628",
+    "--grp-module-h3-gradient-to": "#262628",
+    "--grp-module-h3-collapse-handler-gradient-from": "#1d3352",
+    "--grp-module-h3-collapse-handler-gradient-to": "#1d3352",
+    "--grp-module-h2-collapse-handler-gradient-from": "#1d3352",
+    "--grp-module-h2-collapse-handler-gradient-to": "#1d3352",
+    "--grp-form-field-background-color": "#1c1c1e",
+    "--grp-form-field-border-color": "#48484a"
+  }
+}

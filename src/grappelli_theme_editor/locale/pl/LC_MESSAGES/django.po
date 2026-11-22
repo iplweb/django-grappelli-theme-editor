@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-22 13:08+0100\n"
+"POT-Creation-Date: 2026-11-22 13:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,6 +218,9 @@ msgstr "Unoszący się"
 msgid "Hard offset (brutalist)"
 msgstr "Twardy, przesunięty (brutalizm)"
 
+msgid "Floating, all around (for the dock)"
+msgstr "Pływający, dookoła (dla docka)"
+
 msgid "Normal"
 msgstr "Normalne"
 
@@ -357,6 +360,33 @@ msgstr "Ikony konturowe, białe"
 
 msgid "Outline icons, dark"
 msgstr "Ikony konturowe, ciemne"
+
+msgid "Outline “Save” icon"
+msgstr "Konturowa ikona „Zapisz”"
+
+msgid "Check mark ✓"
+msgstr "Ptaszek ✓"
+
+msgid "Cloud with arrow up"
+msgstr "Chmura ze strzałką w górę"
+
+msgid "Arrow into a tray"
+msgstr "Strzałka do tacki"
+
+msgid "Floppy disk (retro)"
+msgstr "Dyskietka (retro)"
+
+msgid "Icon size"
+msgstr "Rozmiar ikon"
+
+msgid "Save / delete button background"
+msgstr "Tło przycisków zapisu i usuwania"
+
+msgid "Filled (Grappelli)"
+msgstr "Wypełnione (Grappelli)"
+
+msgid "None — just the icon, like a dock"
+msgstr "Brak — sama ikona, jak w docku"
 
 msgid "“Save” icon"
 msgstr "Ikona „Zapisz”"
@@ -714,6 +744,9 @@ msgstr "Dock: wyśrodkowany, szeroki tylko na przyciski"
 
 msgid "At the end of the form (does not float)"
 msgstr "Na końcu formularza (nie pływa)"
+
+msgid "Distance from the bottom (dock)"
+msgstr "Odległość od dołu (dock)"
 
 msgid "Button frame rounding"
 msgstr "Zaokrąglenie ramek przycisków"

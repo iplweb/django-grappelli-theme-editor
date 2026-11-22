@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.1 (2026-11-22)
+
+- New presets: Dockside, Dockside Night, Dockside Emoji (macOS-like dock with
+  background-less icon buttons), Fluent, Solarized.
+- Submit bar: distance from the bottom for the dock, floating shadow.
+- Icons: icon size, background-less ("plain") buttons, red delete icon on
+  plain buttons, delete icon properly centred.
+- "Save" no longer defaults to a floppy disk: outline check mark (or cloud,
+  tray, floppy), ✅ as the default emoji.
+
 ## 0.1.0 (2026-11-22)
 
 First release.

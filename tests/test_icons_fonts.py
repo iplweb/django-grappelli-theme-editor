@@ -66,7 +66,8 @@ def test_submit_icon_only():
     assert ".grp-submit-row input[name=_save]" in css
     assert "color:transparent" in css
     assert "data:image/svg+xml" in css
-    assert ".grp-submit-row a.grp-delete-link{font-size:0" in css
+    assert ".grp-submit-row a.grp-delete-link{display:inline-flex" in css
+    assert "justify-content:center;font-size:0" in css
 
 
 def test_stylesheet_url_validation():

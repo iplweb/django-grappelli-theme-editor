@@ -24,21 +24,32 @@ above the preview take you straight to each of them.
 
 ## Before / after
 
-| Stock Grappelli | Same page, “Clean Slate” theme |
+| Stock Grappelli | Same page, “Dockside” theme |
 |---|---|
-| ![Stock Grappelli](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/before.png) | ![Clean Slate](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/clean-slate.png) |
+| ![Stock Grappelli](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/before.png) | ![Dockside](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/after.png) |
 
-## Twelve ready-made themes
+**Dockside** turns the submit bar into a floating, centred dock with
+background-less icon buttons, macOS style:
 
-`python manage.py load_theme_presets` installs them. Some of them make
+![The Dockside dock with outline icons](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/dock.png)
+
+…or with colourful emoji (**Dockside Emoji**):
+
+![The Dockside dock with emoji](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/dock-emoji.png)
+
+## Seventeen ready-made themes
+
+`python manage.py load_theme_presets` installs them. Several of them make
 Grappelli stop looking like Grappelli.
 
 | | | |
 |---|---|---|
-| **Clean Slate**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/clean-slate.png) | **Material**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/material.png) | **Terminal**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/terminal.png) |
-| **Brutalist**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/brutalist.png) | **Nord**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/nord.png) | **Sakura**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/sakura.png) |
-| **Graphite**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/graphite.png) | **Midnight**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/midnight.png) | **Ocean**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/ocean.png) |
-| **Warm paper**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/warm-paper.png) | **Forest**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/forest.png) | **High contrast**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/high-contrast.png) |
+| **Dockside**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/dockside.png) | **Dockside Night**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/dockside-night.png) | **Dockside Emoji**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/dockside-emoji.png) |
+| **Clean Slate**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/clean-slate.png) | **Material**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/material.png) | **Fluent**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/fluent.png) |
+| **Terminal**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/terminal.png) | **Brutalist**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/brutalist.png) | **Nord**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/nord.png) |
+| **Sakura**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/sakura.png) | **Solarized**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/solarized.png) | **Graphite**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/graphite.png) |
+| **Midnight**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/midnight.png) | **Ocean**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/ocean.png) | **Warm paper**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/warm-paper.png) |
+| **Forest**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/forest.png) | **High contrast**<br>![](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/themes/high-contrast.png) |  |
 
 All presets pass the built-in WCAG contrast checks.
 
@@ -58,10 +69,15 @@ All presets pass the built-in WCAG contrast checks.
   the filter arrow, and put icons on Save / Save and continue / Save and add
   another / Delete, as *icon + text* or *icon only*. Pick from ~150 emoji in a
   picker, use the built-in outline icons (white or dark), or give each button
-  your own image URL.
+  your own image URL. Buttons can be filled or background-less, at any icon
+  size. No floppy disk by default: “Save” is a check mark, with a cloud, a
+  tray or (for nostalgics) the floppy as alternatives.
+
+  ![Save icon choices](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/save-icons.png)
 * **The bottom submit bar.** Keep Grappelli's floating bar, glue it to the
   bottom edge, turn it into a centred **dock** that is only as wide as its
-  buttons (like the macOS dock), or let it sit at the end of the form.
+  buttons (like the macOS dock, at the height you like, with a floating
+  shadow), or let it sit at the end of the form.
 * **Typography.** Interface, headings, labels, form fields and monospace
   fonts, picked from a menu with safe system fonts, your uploaded fonts, web
   fonts (Bunny Fonts or Google Fonts) and the fonts installed on your computer.
@@ -70,8 +86,6 @@ All presets pass the built-in WCAG contrast checks.
   it or pin it to a corner, scrolling or fixed.
 * **Load from…** Copy only the colours, only the shapes or only the fonts of
   another theme into the one you are editing.
-
-![The submit bar as a dock, with icons on the buttons](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/dock.png)
 
 ![Icons tab with the emoji picker](https://raw.githubusercontent.com/iplweb/django-grappelli-theme-editor/main/docs/screenshots/icons.png)
 
@@ -141,7 +155,7 @@ urlpatterns = [
 
 ```bash
 python manage.py migrate
-python manage.py load_theme_presets   # optional: the twelve themes above
+python manage.py load_theme_presets   # optional: the seventeen themes above
 ```
 
 Uploaded fonts and background images are `FileField`s, so `MEDIA_URL` and

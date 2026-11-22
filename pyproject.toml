@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-grappelli-theme-editor"
-version = "0.1.0"
+version = "0.1.1"
 description = "Database-backed theme editor for the django-grappelli admin: colours, fonts, density — site-wide and per user, with a live preview."
 readme = "README.md"
 license = { text = "MIT" }

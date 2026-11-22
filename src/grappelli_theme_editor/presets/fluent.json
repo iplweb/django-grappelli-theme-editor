@@ -1,0 +1,113 @@
+{
+  "name": "Fluent",
+  "description": "Windows 11 style: Segoe UI, subtle borders, small radii, accent-blue primary buttons.",
+  "font_sans": "'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif",
+  "font_scale": "1.05",
+  "seeds": {
+    "light": {
+      "accent": "#005fb8",
+      "background": "#f3f3f3",
+      "text": "#1b1b1b",
+      "chrome": "#202020"
+    },
+    "dark": {
+      "accent": "#60cdff",
+      "background": "#202020",
+      "text": "#ffffff",
+      "chrome": "#1b1b1b"
+    }
+  },
+  "components": {
+    "general": {
+      "surfaces": "flat"
+    },
+    "navbar": {
+      "background": {
+        "light": "#ffffff",
+        "dark": "#2b2b2b"
+      },
+      "text": {
+        "light": "#1b1b1b",
+        "dark": "#ffffff"
+      },
+      "link": {
+        "light": "#005fb8",
+        "dark": "#60cdff"
+      },
+      "link_hover": {
+        "light": "#1b1b1b",
+        "dark": "#ffffff"
+      },
+      "border": 1,
+      "border_color": {
+        "light": "#e5e5e5",
+        "dark": "#3a3a3a"
+      },
+      "padding_y": 12
+    },
+    "breadcrumbs": {
+      "text_shadow": "none",
+      "link": {
+        "light": "#005fb8",
+        "dark": "#60cdff"
+      }
+    },
+    "buttons": {
+      "radius": 4,
+      "height": 32,
+      "padding_x": 14,
+      "weight": "600",
+      "dim_secondary": "full"
+    },
+    "inputs": {
+      "radius": 4,
+      "height": 32,
+      "inner_shadow": "none",
+      "focus": "ring",
+      "weight": "normal"
+    },
+    "modules": {
+      "radius": 8,
+      "group_radius": 8,
+      "shadow": "subtle",
+      "header_text_shadow": "none",
+      "header_surface": "flat"
+    },
+    "filters": {
+      "radius": 8,
+      "open_shadow": "medium",
+      "search_radius": 4
+    },
+    "tables": {
+      "radius": 8,
+      "grid": "rows",
+      "stripes": "off",
+      "empty_pattern": "solid"
+    },
+    "messages": {
+      "radius": 4,
+      "style": "accent",
+      "weight": "normal"
+    },
+    "object_tools": {
+      "radius": 4,
+      "opacity": "full"
+    },
+    "footer": {
+      "position": "flush",
+      "surface": "flat",
+      "shadow": "subtle"
+    },
+    "icons": {
+      "submit_style": "icon_text",
+      "submit_icons": "white",
+      "add_icon": "line",
+      "search_icon": "line"
+    }
+  },
+  "format": "grappelli-theme-editor/1",
+  "light_tokens": {
+    "--grp-dark-border-shade-color": "#e5e5e5",
+    "--grp-dark-border-highlight-color": "#ffffff"
+  }
+}

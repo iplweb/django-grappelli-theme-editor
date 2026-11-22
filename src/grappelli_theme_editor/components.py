@@ -54,6 +54,10 @@ SHADOWS_UP = {
     "subtle": (_("Subtle"), "0 -1px 2px rgba(0,0,0,.10)"),
     "soft": (_("Soft"), "0 -2px 8px rgba(0,0,0,.16)"),
     "strong": (_("Strong"), "0 -6px 20px rgba(0,0,0,.28)"),
+    "floating": (
+        _("Floating, all around (for the dock)"),
+        "0 14px 40px rgba(0,0,0,.30), 0 3px 10px rgba(0,0,0,.16)",
+    ),
 }
 TRANSFORMS = {
     "none": (_("Normal"), "text-transform:none;letter-spacing:normal"),
@@ -275,6 +279,11 @@ def glyph_svg(glyph: str) -> str:
 LINE_ICONS = {
     "save": '<path d="M5 3h11l3 3v15H5z"/><path d="M8 3v5h7V3"/>'
     '<rect x="8" y="13" width="8" height="6"/>',
+    "save_check": '<path d="M5 12.5l4.5 4.5L19 7"/>',
+    "save_cloud": '<path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.1 11.1 '
+    '3.5 3.5 0 0 0 7 18z"/>'
+    '<path d="M12 16v-5M9.5 13.5L12 11l2.5 2.5"/>',
+    "save_tray": '<path d="M4 14v5h16v-5"/><path d="M12 4v10M8 10l4 4 4-4"/>',
     "continue": '<path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/>',
     "addanother": '<path d="M12 5v14M5 12h14"/>',
     "add": '<path d="M12 5v14M5 12h14"/>',
@@ -283,6 +292,8 @@ LINE_ICONS = {
     "search": '<circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/>',
 }
 LINE_COLORS = {"white": "#ffffff", "dark": "#222222", "grey": "#888888"}
+# "Delete" gets a red outline icon on plain (background-less) buttons.
+DELETE_LINE_COLORS = {"white": "#ff6961", "dark": "#d70015"}
 
 
 def line_svg(name: str, color: str) -> str:
@@ -591,13 +602,23 @@ def _icon_rules(values: dict, component: Component, context: dict) -> list[Rule]
     if style in ("icon_text", "icon_only"):
         source = v("submit_icons")
 
+        plain = v("submit_buttons") == "plain"
+        size = int(v("icon_size"))
+        box = f"{size}px {size}px"
+
         def icon_for(name: str) -> tuple[str, bool]:
             """(css image, is_image) for one button."""
             url = values.get(f"{name}_image")
             if url:
                 return f'url("{url}")', True
             if source in LINE_COLORS:
-                return line_svg(name, LINE_COLORS[source]), True
+                color = LINE_COLORS[source]
+                if plain and name == "delete":
+                    color = DELETE_LINE_COLORS.get(source, color)
+                shape = name
+                if name == "save" and v("save_line") != "floppy":
+                    shape = f"save_{v('save_line')}"
+                return line_svg(shape, color), True
             return glyph_svg(v(f"{name}_glyph")), False
 
         base_bg = (
@@ -612,19 +633,27 @@ def _icon_rules(values: dict, component: Component, context: dict) -> list[Rule]
             name = glyph_key.removesuffix("_glyph")
             icon, _is_image = icon_for(name)
             position = "50% 50%" if style == "icon_only" else "9px 50%"
-            decl = (
-                f"background-image:{icon}, {base_bg};"
-                "background-repeat:no-repeat;"
-                f"background-position:{position}, 0 0;"
-                "background-size:16px 16px, auto"
-            )
-            if style == "icon_only":
-                decl += (
-                    ";color:transparent;width:40px;min-width:0;"
-                    "padding-left:0;padding-right:0;text-indent:-999px"
+            if plain:
+                decl = (
+                    f"background:{icon} {position} / {box} no-repeat transparent;"
+                    "border:0;box-shadow:none;color:var(--grp-font-color)"
                 )
             else:
-                decl += ";padding-left:32px"
+                decl = (
+                    f"background-image:{icon}, {base_bg};"
+                    "background-repeat:no-repeat;"
+                    f"background-position:{position}, 0 0;"
+                    f"background-size:{box}, auto"
+                )
+            if style == "icon_only":
+                decl += (
+                    f";color:transparent;width:{size + 24}px;min-width:0;"
+                    "padding-left:0;padding-right:0;text-indent:-999px"
+                )
+                if plain:
+                    decl += f";height:{size + 16}px"
+            else:
+                decl += f";padding-left:{size + 16}px"
             rules.append((selector, decl))
             # Grappelli's submit row is always the fixed footer, hence the
             # footer hover colours.
@@ -633,25 +662,53 @@ def _icon_rules(values: dict, component: Component, context: dict) -> list[Rule]
                 for part in selector.split(",")
                 for state in ("hover", "focus")
             )
-            rules.append(
-                (
-                    hovered,
-                    f"background-image:{icon}, {hover_bg};"
-                    "background-size:16px 16px, auto",
+            if plain:
+                rules.append(
+                    (
+                        hovered,
+                        f"background:{icon} {position} / {box} no-repeat "
+                        "rgba(127,127,127,.18);border:0;box-shadow:none",
+                    )
                 )
-            )
+            else:
+                rules.append(
+                    (
+                        hovered,
+                        f"background-image:{icon}, {hover_bg};"
+                        f"background-size:{box}, auto",
+                    )
+                )
 
         delete_image, is_image = icon_for("delete")
         if is_image:
-            before = _image_box(delete_image, 14, gap=style != "icon_only")
+            before = _image_box(delete_image, size, gap=style != "icon_only")
         else:
             before = f"content:{css_string(v('delete_glyph'))}" + (
-                ";font-size:15px" if style == "icon_only" else ";margin-right:6px"
+                f";font-size:{size}px" if style == "icon_only" else ";margin-right:6px"
             )
+        # The delete button is a link: centre its icon with flexbox (an
+        # inline icon sits on the text baseline and ends up too high).
+        link = "display:inline-flex;align-items:center;justify-content:center"
         if style == "icon_only":
-            rules.append(
-                (DELETE_LINK, "font-size:0;padding-left:12px;padding-right:12px")
+            link += (
+                f";font-size:0;padding-left:12px;padding-right:12px;"
+                f"min-width:{size + 24}px"
             )
+            if plain:
+                link += f";height:{size + 16}px"
+            before = before.replace("vertical-align:-2px;", "")
+        if plain:
+            link += (
+                ";background:transparent;border:0;box-shadow:none;"
+                "color:var(--grp-font-color-error)"
+            )
+            rules.append(
+                (
+                    DELETE_LINK + ":hover," + DELETE_LINK + ":focus",
+                    "background:rgba(127,127,127,.18);border:0;box-shadow:none",
+                )
+            )
+        rules.append((DELETE_LINK, link))
         rules.append((DELETE_LINK + "::before", before))
     return rules
 
@@ -704,7 +761,28 @@ ICONS = Component(
             },
             default="emoji",
         ),
-        Glyph("save_glyph", _("“Save” icon"), default="💾"),
+        Choice(
+            "save_line",
+            _("Outline “Save” icon"),
+            options={
+                "check": (_("Check mark ✓"), ""),
+                "cloud": (_("Cloud with arrow up"), ""),
+                "tray": (_("Arrow into a tray"), ""),
+                "floppy": (_("Floppy disk (retro)"), ""),
+            },
+            default="check",
+        ),
+        Length("icon_size", _("Icon size"), default=16, min=12, max=40),
+        Choice(
+            "submit_buttons",
+            _("Save / delete button background"),
+            options={
+                "filled": (_("Filled (Grappelli)"), ""),
+                "plain": (_("None — just the icon, like a dock"), ""),
+            },
+            default="filled",
+        ),
+        Glyph("save_glyph", _("“Save” icon"), default="✅"),
         Glyph("continue_glyph", _("“Save and continue editing” icon"), default="📝"),
         Glyph("addanother_glyph", _("“Save and add another” icon"), default="➕"),
         Glyph("delete_glyph", _("“Delete” icon"), default="🗑️"),
@@ -1605,6 +1683,13 @@ COMPONENTS: tuple[Component, ...] = (
                 options=SHADOWS_UP,
                 targets=((".grp-fixed-footer", "box-shadow:{v}"),),
                 default="grappelli",
+            ),
+            Length(
+                "dock_offset",
+                _("Distance from the bottom (dock)"),
+                targets=((".grp-fixed-footer", "bottom:{v}"),),
+                default=14,
+                max=80,
             ),
             Length(
                 "item_radius",
